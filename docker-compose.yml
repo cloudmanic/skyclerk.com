@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  web:
+    image: cloudmanic/nginx-php:7.2
+
+    user: "501:20"
+
+    ports:
+      - "127.0.0.1:8087:8080"
+
+    links:
+      - mysql
+
+    volumes:
+      - ./:/www
+      - ./web:/www/public
+
+  mysql:
+    image: mariadb:10.4
+
+    ports:
+      - "127.0.0.1:3387:3306"
+
+    volumes:
+      - ./storage/db_data:/var/lib/mysql
+
+    environment:
+      MYSQL_ROOT_PASSWORD: foobar
+      MYSQL_DATABASE: skyclerk_com
+      MYSQL_USER: skyclerk_com
+      MYSQL_PASSWORD: foobar
