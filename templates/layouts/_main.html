@@ -1,0 +1,119 @@
+{% set loginUrl = getenv('APP_LOGIN_URL') %}
+{% set registerUrl = getenv('APP_REGISTER_URL') %}
+
+{% set trialDays = getenv('TRIAL_DAYS') %}
+
+{% set twitterUrl = getenv('TWITTER_URL') %}
+{% set facebookUrl = getenv('FACEBOOK_URL') %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Skyclerk</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="shell shell--fluid">
+				<div class="header__content">
+					<a href="{{ url('') }}" class="logo">Skyclerk</a>
+
+					<a href="#" class="btn-menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
+
+					<div class="header__nav">
+						<nav class="nav">
+							<ul>
+								<li>
+									<a href="{{ url('') }}">Home</a>
+								</li>
+
+								<li>
+									<a href="{{ url('blog') }}">Blog</a>
+								</li>
+
+								<li>
+									<a href="{{ url('support') }}">Support</a>
+								</li>
+							</ul>
+						</nav>
+
+						<div class="header__actions">
+							<nav class="nav">
+								<ul>
+									<li>
+										<a href="{{ loginUrl }}">Login</a>
+									</li>
+								</ul>
+							</nav>
+
+							<a href="{{ registerUrl }}" class="btn">
+								{{ trialDays }} Day Free Trial
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		{% block content %}{% endblock %}
+
+		<footer class="footer">
+			<div class="shell shell--fluid">
+				<div class="footer__content">
+					<div class="footer__aside">
+						<a href="{{ url('') }}" class="logo logo--footer"></a>
+						<p>&copy; 2019. All rights reserved. Skyclerk is a <a href="https://cloudmanic.com">Cloudmanic Labs</a> company</p>
+					</div>
+
+					<div class="footer__actions">
+						<div class="footer__nav">
+							<ul>
+								<li>
+									<a href="#">Terms of Service</a>
+								</li>
+
+								<li>
+									<a href="#">Privacy Policy</a>
+								</li>
+
+								<li>
+									<a href="#">Refunds</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="socials">
+							<ul>
+								<li>
+									<a href="{{ twitterUrl }}" target="_blank">
+										<i class="ico-twitter"></i>
+									</a>
+								</li>
+
+								<li>
+									<a href="{{ facebookUrl }}" target="_blank">
+										<i class="ico-facebook"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>
