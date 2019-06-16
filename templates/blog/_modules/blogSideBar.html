@@ -1,3 +1,8 @@
+{% set twitterUrl = getenv('TWITTER_URL') %}
+{% set facebookUrl = getenv('FACEBOOK_URL') %}
+{% set registerUrl = getenv('APP_REGISTER_URL') %}
+{% set categories = craft.categories.group('blog') %}
+
 <div class="col col--size2">
 	<aside class="section__aside">
 		<nav class="nav-secondary">
@@ -5,65 +10,33 @@
 
 			<ul>
 				<li>
-					<a href="#">All Posts</a>
+					<a href="{{ url('/blog') }}">All Posts</a>
 				</li>
 
+				{% for row in categories %}
 				<li>
-					<a href="#">Software Design</a>
+					<a href="{{ row.url }}">{{ row.title }}</a>
 				</li>
-
-				<li>
-					<a href="#">Skyclerk</a>
-				</li>
-
-				<li>
-					<a href="#">Programming</a>
-				</li>
-
-				<li>
-					<a href="#">Photomanic</a>
-				</li>
-
-				<li>
-					<a href="#">Interesting</a>
-				</li>
-
-				<li>
-					<a href="#">Heapless</a>
-				</li>
-
-				<li>
-					<a href="#">Evermanic</a>
-				</li>
-
-				<li>
-					<a href="#">Company News</a>
-				</li>
-
-				<li>
-					<a href="#">Business Ideas</a>
-				</li>
+				{% endfor %}
 			</ul>
 
 			<div class="search">
-				<form action="?" method="get">
+				<form action="{{ url('blog') }}" method="get">
 					<div class="search__body">
 						<label for="q" class="hidden">Search</label>
-
-						<input type="search" name="q" id="q" placeholder="Search Our Blog" class="search__field">
-
+						<input type="search" name="q" id="q" value="{{ query }}" placeholder="Search Our Blog" class="search__field" />
 						<button type="submit" class="search__btn btn">
 							<i class="ico-search"></i>
 						</button>
-					</div><!-- /.search__body -->
+					</div>
 				</form>
-			</div><!-- /.search -->
-		</nav><!-- /.nav-secondary -->
+			</div>
+		</nav>
 
 		<div class="callout-aside" style="background-image: url(/assets/images/temp/callout-image.png);">
 			<div class="callout__head">
-				<a href="#" class="logo"></a>
-			</div><!-- /.callout__head -->
+				<a href="{{ registerUrl }}" class="logo"></a>
+			</div>
 
 			<div class="callout__body">
 				<h3>Simple, Reliable and Secure Bookkeeping</h3>
@@ -71,35 +44,35 @@
 				<p>
 					Get up-to-date reports that give you visibility into your P&amp;L, income, and expenses.
 				</p>
-			</div><!-- /.callout__body -->
+			</div>
 
 			<div class="callout__actions">
-				<a href="#" class="btn btn--block">
+				<a href="{{ registerUrl }}" class="btn btn--block">
 					Start Here
 				</a>
-			</div><!-- /.callout__actions -->
-		</div><!-- /.callout-aside -->
-	</aside><!-- /.section__aside -->
+			</div>
+		</div>
+	</aside>
 
 	<div class="socials socials--callout">
 		<div class="socials__head">
 			<h5>Follow Us!</h5>
-		</div><!-- /.socials__head -->
+		</div>
 
 		<div class="socials__body">
 			<ul>
 				<li>
-					<a href="#">
+					<a href="{{ twitterUrl }}" target="_blank">
 						<i class="ico-twitter"></i>
 					</a>
 				</li>
 
 				<li>
-					<a href="#">
+					<a href="{{ facebookUrl }}" target="_blank">
 						<i class="ico-facebook"></i>
 					</a>
 				</li>
 			</ul>
-		</div><!-- /.socials__body -->
-	</div><!-- /.socials -->
-</div><!-- /.col col-/-size2 -->
+		</div>
+	</div>
+</div>
