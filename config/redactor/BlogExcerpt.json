@@ -1,6 +1,7 @@
 {
+  "limiter": 85,
   "buttons": ["html", "formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image", "video"],
-  "plugins": ["fullscreen", "video","counter"],
+  "plugins": ["fullscreen", "video","limiter", "counter"],
   "linkNewTab": true,
   "toolbarFixed": true
 }

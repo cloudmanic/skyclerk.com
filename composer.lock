@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd88d69df0319e826c07d986cc0771d0",
+    "content-hash": "aa80f494570b78284666481a7677739d",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -788,6 +788,55 @@
             "time": "2019-06-08T11:03:04+00:00"
         },
         {
+            "name": "doublesecretagency/craft-cpjs",
+            "version": "2.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doublesecretagency/craft-cpjs/zipball/c8cdb87b0361362162c97981494038b3d8595407",
+                "reference": "c8cdb87b0361362162c97981494038b3d8595407",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Control Panel JS",
+                "handle": "cp-js",
+                "schemaVersion": "2.0.0",
+                "changelogUrl": "https://raw.githubusercontent.com/doublesecretagency/craft-cpjs/v2/CHANGELOG.md",
+                "class": "doublesecretagency\\cpjs\\CpJs"
+            },
+            "autoload": {
+                "psr-4": {
+                    "doublesecretagency\\cpjs\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Double Secret Agency",
+                    "homepage": "https://www.doublesecretagency.com/plugins"
+                }
+            ],
+            "description": "Add custom JavaScript to your Control Panel.",
+            "keywords": [
+                "cms",
+                "cp-js",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "javascript"
+            ],
+            "support": {
+                "docs": "https://github.com/doublesecretagency/craft-cpjs/blob/v2/README.md",
+                "issues": "https://github.com/doublesecretagency/craft-cpjs/issues"
+            },
+            "time": "2018-01-01T22:58:51+00:00"
+        },
+        {
             "name": "egulias/email-validator",
             "version": "2.1.8",
             "dist": {
@@ -1421,6 +1470,56 @@
                 "shell"
             ],
             "time": "2018-07-07T07:35:36+00:00"
+        },
+        {
+            "name": "mmikkel/cp-field-inspect",
+            "version": "1.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mmikkel/CpFieldInspect-Craft/zipball/e20117d550a5696e0b199bb90d81648356dcc83c",
+                "reference": "e20117d550a5696e0b199bb90d81648356dcc83c",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "CP Field Inspect",
+                "handle": "cp-field-inspect",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/mmikkel/CpFieldInspect-Craft/master/CHANGELOG.md",
+                "class": "mmikkel\\cpfieldinspect\\CpFieldInspect"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mmikkel\\cpfieldinspect\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mats Mikkel Rummelhoff",
+                    "homepage": "http://mmikkel.no"
+                }
+            ],
+            "description": "Inspect field handles and easily edit field settings",
+            "keywords": [
+                "cms",
+                "cp field inspect",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/mmikkel/CpFieldInspect-Craft/blob/master/README.md",
+                "issues": "https://github.com/mmikkel/CpFieldInspect-Craft/issues"
+            },
+            "time": "2018-09-26T08:08:50+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
