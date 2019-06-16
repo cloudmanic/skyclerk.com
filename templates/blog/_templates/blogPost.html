@@ -1,0 +1,89 @@
+{% extends "layouts/_main" %}
+
+{% set query = craft.request.getParam('q') %}
+
+{# Set parameters for prev/next elements list #}
+{% set params = craft.entries.section('blog') %}
+
+{# Get the prev/next elements #}
+{% set prevEntry = entry.getPrev(params) %}
+{% set nextEntry = entry.getNext(params) %}
+
+{% block content %}
+
+<div class="main main--inner">
+	<article class="article">
+		<header class="article__head">
+			<div class="shell">
+				<h1>{{ entry.title }}</h1>
+
+				<h6>
+					<a href="{{ entry.blogCategory.one().url }}">{{ entry.blogCategory.one().title }}</a>
+					<span class="separator">|</span>
+					{{ entry.postDate.atom|date("F d, Y") }}
+					<span class="separator">|</span>
+					<a href="{{ entry.author.profileLink }}" target="_blank">{{ entry.author.fullName }}</a>
+				</h6>
+
+				<div class="socials socials--article">
+					{% include "modules/_shareLinkList" %}
+				</div>
+			</div>
+		</header>
+
+		<div class="article__body">
+			<div class="shell">
+				<div class="cols">
+					<div class="col col--size1">
+						<div class="article__content">
+
+							{{ entry.blogBody }}
+
+							{% if entry.blogMustReads | length %}
+							<h4>Enjoyed this post? Here are some must reads.</h4>
+
+							<ul class="list-links">
+								{% for row in entry.blogMustReads %}
+								<li>
+									<a href="{{ row.url }}">{{ row.title }}</a>
+								</li>
+								{% endfor %}
+							</ul>
+							{% endif %}
+
+							{% if entry.blogTags | length %}
+							<h4>
+								<strong>Related Topics: </strong>
+								{% for tag in entry.blogTags %}
+								<a href="{{ url('blog/related-topics/' ~ tag.title|kebab) }}" class="capitalize">{{ tag.title }}</a>{{ loop.index < loop.length ? ', ' : '' }}
+								{% endfor %}
+							</h4>
+							{% endif %}
+
+							<div class="article__foot">
+								<h4>Like what you read? Please Share!</h4>
+
+								<div class="socials socials--article">
+									{% include "modules/_shareLinkList" %}
+								</div>
+
+								<div class="article__comments">
+									<img src="/assets/images/temp/comments-section.jpg" alt="" />
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					{% include "blog/_modules/blogSideBar" %}
+
+				</div>
+			</div>
+		</div>
+	</article>
+
+	{% include "modules/_newsletter" %}
+
+</div>
+
+{% endblock %}

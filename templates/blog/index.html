@@ -1,9 +1,9 @@
 {% extends "layouts/_main" %}
 
-{% set query = craft.request.getParam('q') %}
+{% set query = craft.app.request.getParam('q') %}
 
 {% if query is not empty %}
-{% paginate craft.entries.section('blog').search(query).order('postDate desc').limit(1000) as pageInfo, entries %}
+{% paginate craft.entries.section('blog').search(query).orderBy('postDate desc').limit(1000) as pageInfo, entries %}
 {% else %}
 {% paginate craft.entries.section('blog').order('postDate desc').limit(15) as pageInfo, entries %}
 {% endif %}

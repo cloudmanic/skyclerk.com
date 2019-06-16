@@ -1,0 +1,23 @@
+{% extends "layouts/_main" %}
+
+{% set tag = craft.tags.title(tag | replace({ '-': ' ' })).first() %}
+
+{% set query = craft.request.getParam('q') %}
+
+{% if not tag %}
+  {% exit 404 %}
+{% endif %}
+
+{% paginate craft.entries.section('blog').relatedTo(tag).order('postDate desc').limit(15) as pageInfo, entries %}
+
+{% set title = "Options Cafe Blog Related To " ~ tag.title ~ siteDetails.siteMetaTitleAppend %}
+{% set description = "Options Cafe is the best place for online options trading advice. Here we explore " ~ tag.title ~ " blog posts" %}
+{% set page_image = craft.assets.filename('woot_20.png').first().url() %}
+
+{% block head %}
+  {% include "modules/_head" %}
+{% endblock %}
+
+{% block content %}
+  {% include "blog/_modules/blogList" %}
+{% endblock %}
