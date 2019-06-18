@@ -1,0 +1,91 @@
+{% extends "layouts/_main" %}
+
+{% block content %}
+
+<div class="main main--inner">
+	<section class="section section--contacts">
+		<div class="shell">
+			<div class="section__container">
+				<header class="section__head">
+					<h5>
+						<a href="{{ url('support') }}">Support :</a> Contact Us
+					</h5>
+				</header>
+
+				<div class="section__body">
+					<div class="form">
+						<form action="?" method="post">
+							<div class="form__head">
+								<h2>The Support Team is Here to Help</h2>
+							</div><!-- /.form__head -->
+
+							<div class="form__body">
+								<div class="form__row">
+									<div class="form__controls">
+										<label for="email-address" class="form__label">What’s your email address?</label>
+
+										<input type="email" class="field" name="email-address" id="email-address">
+
+										<div class="form__error">
+											<p>
+												Email address is required.
+											</p>
+										</div><!-- /.form__error -->
+									</div><!-- /.form__controls -->
+								</div><!-- /.form__row -->
+
+								<div class="form__row">
+									<div class="form__controls">
+										<label for="help-with" class="form__label">What do you need help with?</label>
+
+										<div class="select">
+											<select name="help-with" id="help-with">
+												<option value="0" style="display: none;" selected="" disabled="">Please select one...</option>
+
+												<option value="1">Select 1#</option>
+
+												<option value="2">Select 2#</option>
+
+												<option value="3">Select 3#</option>
+											</select>
+										</div><!-- /.select -->
+
+										<div class="form__error">
+											<p>
+												Subject is required.
+											</p>
+										</div><!-- /.form__error -->
+									</div><!-- /.form__controls -->
+								</div><!-- /.form__row -->
+
+								<div class="form__row">
+									<div class="form__controls">
+										<label for="message" class="form__label">What’s your question, comment, or issue?</label>
+
+										<textarea class="textarea" name="message" id="message"></textarea>
+
+										<div class="form__error">
+											<p>
+												Body is required.
+											</p>
+										</div><!-- /.form__error -->
+									</div><!-- /.form__controls -->
+								</div><!-- /.form__row -->
+							</div><!-- /.form__body -->
+
+							<div class="form__actions">
+								<button type="submit" class="form__btn btn btn--size2">
+									Submit request
+								</button>
+							</div><!-- /.form__actions -->
+						</form>
+					</div><!-- /.form -->
+				</div><!-- /.section__body -->
+			</div><!-- /.section__container -->
+		</div><!-- /.shell -->
+	</section><!-- /.section -->
+
+	{% include "modules/_newsletter" %}
+</div>
+
+{% endblock %}

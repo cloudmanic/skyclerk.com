@@ -18,11 +18,15 @@
 				<h1>{{ entry.title }}</h1>
 
 				<h6>
-					<a href="{{ entry.blogCategory.one().url }}">{{ entry.blogCategory.one().title }}</a>
+					<a href="{{ entry.blogCategory.one().url }}">
+						{{ entry.blogCategory.one().title }}
+					</a>
 					<span class="separator">|</span>
 					{{ entry.postDate|date("F d, Y") }}
 					<span class="separator">|</span>
-					<a href="{{ entry.author.profileLink }}" target="_blank">{{ entry.author.fullName }}</a>
+					<a href="{{ entry.author.profileLink }}" target="_blank">
+						{{ entry.author.fullName }}
+					</a>
 				</h6>
 
 				<div class="socials socials--article">
@@ -36,7 +40,6 @@
 				<div class="cols">
 					<div class="col col--size1">
 						<div class="article__content">
-
 							{{ entry.blogBody }}
 
 							{% if entry.blogMustReads | length %}
@@ -49,13 +52,14 @@
 								</li>
 								{% endfor %}
 							</ul>
-							{% endif %}
-
-							{% if entry.blogTags | length %}
+							{% endif %} {% if entry.blogTags | length %}
 							<h4>
-								<strong>Related Topics: </strong>
+								<strong>Related Topics:</strong>
 								{% for tag in entry.blogTags %}
-								<a href="{{ url('blog/related-topics/' ~ tag.title|kebab) }}" class="capitalize">{{ tag.title }}</a>{{ loop.index < loop.length ? ', ' : '' }}
+								<a href="{{ url('blog/related-topics/' ~ tag.title|kebab) }}" class="capitalize">
+									{{ tag.title }}
+								</a>
+								{{ loop.index < loop.length ? ", " : "" }}
 								{% endfor %}
 							</h4>
 							{% endif %}
@@ -74,31 +78,34 @@
 											this.page.url = "{{ entry.url }}";
 											this.page.identifier = "{{ entry.id }}";
 										};
-										(function() { // DON'T EDIT BELOW THIS LINE
+										(function() {
+											// DON'T EDIT BELOW THIS LINE
 											var d = document,
-												s = d.createElement('script');
-											s.src = 'https://skyclerk.disqus.com/embed.js';
-											s.setAttribute('data-timestamp', +new Date());
+												s = d.createElement("script");
+											s.src = "https://skyclerk.disqus.com/embed.js";
+											s.setAttribute("data-timestamp", +new Date());
 											(d.head || d.body).appendChild(s);
 										})();
 
 									</script>
-									<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+									<noscript>
+										Please enable JavaScript to view the
+										<a href="https://disqus.com/?ref_noscript">
+											comments powered by Disqus.
+										</a>
+									</noscript>
 								</div>
-
 							</div>
 						</div>
 					</div>
 
 					{% include "blog/_modules/blogSideBar" %}
-
 				</div>
 			</div>
 		</div>
 	</article>
 
 	{% include "modules/_newsletter" %}
-
 </div>
 
 {% endblock %}
