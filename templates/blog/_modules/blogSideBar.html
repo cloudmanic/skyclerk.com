@@ -13,7 +13,7 @@
 					<a href="{{ url('/blog') }}">All Posts</a>
 				</li>
 
-				{% for row in categories %}
+				{% for row in categories.all() %}
 				<li>
 					<a href="{{ row.url }}">{{ row.title }}</a>
 				</li>

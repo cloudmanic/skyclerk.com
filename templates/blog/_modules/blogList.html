@@ -1,4 +1,16 @@
 <div class="shell">
+	{% if category is defined %}
+	<header class="section__head"><h2>{{ category.title }}</h2></header>					
+	{% endif %}
+
+	{% if query is not empty %}
+	<header class="section__head"><h2>Search: {{ query }}</h2></header>
+	{% endif %}
+
+	{% if tag is defined %}
+	<header class="section__head"><h2>Related To: {{ tag.title }}</h2></header>
+	{% endif %}
+
 	<div class="cols">
 		<div class="col col--size1">
 			<div class="section__content">
@@ -19,7 +31,7 @@
 							<h6>
 								{{ row.blogCategory.one().title }}
 								<span class="separator">|</span>
-								{{ row.postDate.atom|date("F d, Y") }}
+								{{ row.postDate|date("F d, Y") }}
 							</h6>
 
 							<p>{{ row.blogExcerpt }}</p>

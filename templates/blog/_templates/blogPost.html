@@ -1,6 +1,6 @@
 {% extends "layouts/_main" %}
 
-{% set query = craft.request.getParam('q') %}
+{% set query = craft.app.request.getParam('q') %}
 
 {# Set parameters for prev/next elements list #}
 {% set params = craft.entries.section('blog') %}
@@ -20,7 +20,7 @@
 				<h6>
 					<a href="{{ entry.blogCategory.one().url }}">{{ entry.blogCategory.one().title }}</a>
 					<span class="separator">|</span>
-					{{ entry.postDate.atom|date("F d, Y") }}
+					{{ entry.postDate|date("F d, Y") }}
 					<span class="separator">|</span>
 					<a href="{{ entry.author.profileLink }}" target="_blank">{{ entry.author.fullName }}</a>
 				</h6>
@@ -43,7 +43,7 @@
 							<h4>Enjoyed this post? Here are some must reads.</h4>
 
 							<ul class="list-links">
-								{% for row in entry.blogMustReads %}
+								{% for row in entry.blogMustReads.all() %}
 								<li>
 									<a href="{{ row.url }}">{{ row.title }}</a>
 								</li>

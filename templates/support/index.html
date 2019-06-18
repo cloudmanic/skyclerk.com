@@ -1,5 +1,7 @@
 {% extends "layouts/_main" %}
 
+{% set categories = craft.categories.group('support') %}
+
 {% block content %}
 
 <div class="main main--inner">
@@ -47,113 +49,28 @@
 
 			<div class="section__body">
 				<div class="cols">
+
+					{% for row in categories.all() %}
 					<div class="col col--1of3">
 						<div class="section__entry">
-							<h3>Getting Started</h3>
+							<h3>{{ row.title }}</h3>
 
+							{% set e = craft.entries.section('support').relatedTo(row).orderBy('postDate desc') %}
 							<ul class="list-categories">
+								{% for row2 in e.all() %}
 								<li>
-									<a href="#">What options strategies does Options Cafe support?</a>
+									<a href="{{ row2.url }}">{{ row2.title }}</a>
 								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					{% endfor %}
 
-								<li>
-									<a href="#">Do you provide phone support or phone training?</a>
-								</li>
-
-								<li>
-									<a href="#">Does Option Cafe offer two-factor authentication (2FA)?</a>
-								</li>
-							</ul><!-- /.list-categories -->
-						</div><!-- /.section__entry -->
-					</div><!-- /.col col-/-1of3 -->
-
-					<div class="col col--1of3">
-						<div class="section__entry">
-							<h3>Broker Support</h3>
-
-							<ul class="list-categories">
-								<li>
-									<a href="#">How do I fund my account?</a>
-								</li>
-
-								<li>
-									<a href="#">How to setup your Tradier Brokerage account?</a>
-								</li>
-
-								<li>
-									<a href="#">Commission Free Trading Costs Per Year</a>
-								</li>
-
-								<li>
-									<a href="#">Who is Tradier Brokerage, Inc?</a>
-								</li>
-
-								<li>
-									<a href="#">What brokers work with Options Cafe?</a>
-								</li>
-
-								<li>
-									<a href="#">How do I connect Options Cafe with my broker (Tradier)?</a>
-								</li>
-							</ul><!-- /.list-categories -->
-						</div><!-- /.section__entry -->
-					</div><!-- /.col col-/-1of3 -->
-
-					<div class="col col--1of3">
-						<div class="section__entry">
-							<h3>Another Category</h3>
-
-							<ul class="list-categories">
-								<li>
-									<a href="#">Does Option Cafe offer two-factor authentication (2FA)?</a>
-								</li>
-
-								<li>
-									<a href="#">Do you provide phone support or phone training?</a>
-								</li>
-
-								<li>
-									<a href="#">Does Option Cafe offer two-factor authentication (2FA)?</a>
-								</li>
-							</ul><!-- /.list-categories -->
-						</div><!-- /.section__entry -->
-					</div><!-- /.col col-/-1of3 -->
-
-					<div class="col col--1of3">
-						<div class="section__entry">
-							<h3>Options Screener</h3>
-
-							<ul class="list-categories">
-								<li>
-									<a href="#">Using the options screener</a>
-								</li>
-							</ul><!-- /.list-categories -->
-						</div><!-- /.section__entry -->
-					</div><!-- /.col col-/-1of3 -->
-
-					<div class="col col--1of3">
-						<div class="section__entry">
-							<h3>Another Category 2</h3>
-
-							<ul class="list-categories">
-								<li>
-									<a href="#">How do I fund my account?</a>
-								</li>
-
-								<li>
-									<a href="#">How to setup your Tradier Brokerage account?</a>
-								</li>
-
-								<li>
-									<a href="#">Commission Free Trading Costs Per Year</a>
-								</li>
-							</ul><!-- /.list-categories -->
-						</div><!-- /.section__entry -->
-					</div><!-- /.col col-/-1of3 -->
-				</div><!-- /.cols -->
-			</div><!-- /.section__body -->
-		</div><!-- /.shell -->
-	</section><!-- /.section -->
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<div class="callout callout--size2">
 		<div class="shell">
