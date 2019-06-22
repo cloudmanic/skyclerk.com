@@ -19,7 +19,13 @@
 
 return [
     'modules' => [
-        'my-module' => \modules\Module::class,
+      'skyclerk' => \modules\Skyclerk\Module::class,
+      'cloudmanic-craft-nginx' => \modules\CloudmanicCraftNginx\Module::class,
+      'cloudmanic-craft-sendy' => \modules\CloudmanicCraftSendy\Module::class
     ],
-    //'bootstrap' => ['my-module'],
+    'bootstrap' => [
+      'skyclerk',
+      'cloudmanic-craft-nginx',
+      'cloudmanic-craft-sendy'
+    ],
 ];

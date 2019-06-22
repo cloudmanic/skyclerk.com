@@ -1,3 +1,5 @@
+{% set version = 1 %}
+
 {% set loginUrl = getenv('APP_LOGIN_URL') %}
 {% set registerUrl = getenv('APP_REGISTER_URL') %}
 
@@ -14,7 +16,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	{% hook "seo" %}
 	<link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css?v={{ version }}">
+
+	<script src="{{ url('assets/vendor/jquery-3.1.1.min.js') }}" defer></script>
+	<script src="{{ url('assets/js/app.js?v=' ~ version) }}" defer></script>
 </head>
 
 <body>
