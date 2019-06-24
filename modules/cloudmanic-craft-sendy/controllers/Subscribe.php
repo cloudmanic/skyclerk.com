@@ -41,7 +41,7 @@ class SubscribeController extends Controller
     // Subscribe (boolean set this to "true" so that you'll get a plain text response)
     $postdata = http_build_query([
       'email' => $email,
-      'list' => getenv("SENDY_LIST_ID"),
+      'list' => getenv("SENDY_NEWSLETTER_LIST_ID"),
       'boolean' => 'true',
       'ipaddress' => Craft::$app->request->userIP,
       'referrer' => 'https://skyclerk.com'

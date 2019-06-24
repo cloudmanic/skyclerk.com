@@ -36,13 +36,27 @@ class SignupController extends Controller
     // Validate email
     if(filter_var($email, FILTER_VALIDATE_EMAIL))
     {
-      // Subscribe (boolean set this to "true" so that you'll get a plain text response)
+      // Subscribe - Signup (boolean set this to "true" so that you'll get a plain text response)
       $postdata = http_build_query([
         'email' => $email,
-        'list' => getenv("SENDY_LIST_ID"),
+        'list' => getenv("SENDY_SIGNUP_LIST_ID"),
         'boolean' => 'true',
         'ipaddress' => Craft::$app->request->userIP,
-        'referrer' => 'https://options.cafe',
+        'referrer' => 'https://skyclerk.com',
+        'Signup' => 'Yes'
+      ]);
+
+      $opts = [ 'http' => [ 'method'  => 'POST', 'header'  => 'Content-type: application/x-www-form-urlencoded', 'content' => $postdata ]];
+      $context  = stream_context_create($opts);
+      $result = file_get_contents(getenv("SENDY_URL") . '/subscribe', false, $context);
+
+      // Subscribe - Newsletter
+      $postdata = http_build_query([
+        'email' => $email,
+        'list' => getenv("SENDY_NEWSLETTER_LIST_ID"),
+        'boolean' => 'true',
+        'ipaddress' => Craft::$app->request->userIP,
+        'referrer' => 'https://skyclerk.com',
         'Signup' => 'Yes'
       ]);
 
@@ -53,7 +67,7 @@ class SignupController extends Controller
       // Send slack notification
       $slack = "payload=" . json_encode([
                       "channel" =>  "#events",
-                      "text" => "New Website Signup From https://options.cafe : $email",
+                      "text" => "New Website Signup From https://skyclerk.com : $email",
               ]);
 
       // You can get your webhook endpoint from your Slack settings
@@ -65,6 +79,6 @@ class SignupController extends Controller
       curl_close($ch);
     }
 
-    return $this->redirect(getenv("APP_URL") . '/register?email=' . $email);
+    return $this->redirect(getenv("APP_REGISTER_URL") . $email);
   }
 }

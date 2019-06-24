@@ -38,15 +38,15 @@
 					<div class="header__nav">
 						<nav class="nav">
 							<ul>
-								<li>
+								<li class="{% if craft.request.firstSegment == '' %}current{% endif %}">
 									<a href="{{ url('') }}">Home</a>
 								</li>
 
-								<li>
+								<li class="{% if craft.request.firstSegment == 'blog' %}current{% endif %}">
 									<a href="{{ url('blog') }}">Blog</a>
 								</li>
 
-								<li>
+								<li class="{% if craft.request.firstSegment == 'support' %}current{% endif %}">
 									<a href="{{ url('support') }}">Support</a>
 								</li>
 							</ul>
