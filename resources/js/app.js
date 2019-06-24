@@ -103,6 +103,11 @@
 					$this.hide();
 					success.addClass("subscribe--success");
 					successMsg.show();
+
+					// Log events.
+					_paq.push(['trackGoal', 1]);
+					_paq.push(['trackEvent', 'Newsletter', 'Subscribe']);
+					ga('send', 'event', 'Newsletter', 'Subscribe');
         }
       });
 
