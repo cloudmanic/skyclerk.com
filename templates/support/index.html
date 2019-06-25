@@ -27,7 +27,7 @@
 					{% for row in categories.all() %}
 					<div class="col col--1of3">
 						<div class="section__entry">
-							<h3>{{ row.title }}</h3>
+							<h3><a href="{{ row.url }}">{{ row.title }}</a></h3>
 
 							{% set e = craft.entries.section('support').relatedTo(row).orderBy('postDate desc') %}
 							<ul class="list-categories">
