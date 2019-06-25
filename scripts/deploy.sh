@@ -2,7 +2,6 @@
 
 # Setup settings
 SSH_PORT='22'
-CODE_SERVERS=("skyclerk@skyclerk.com")
 DOCKER_SERVERS=("spicer@skyclerk.com")
 DOCKER_IMAGE="skyclerk.com/nginx-php70"
 REMOTE_DIR="/sites/skyclerk/skyclerk.com"
@@ -28,4 +27,4 @@ done
 # Rebuilt site cache.
 echo "## Rebuilding site cache ##"
 
-#curl -H "Content-Type: application/json" -X POST -d '{"token": "FMHpSGP52WcrKZOvAkx2","sitemap": "https://skyclerk.com/sitemap.xml"}' https://cache-warm.cloudmanic.com
+curl -H "Content-Type: application/json" -X POST -d '{"token": "FMHpSGP52WcrKZOvAkx2","sitemap": "https://skyclerk.com/sitemap.xml"}' https://cache-warm.cloudmanic.com

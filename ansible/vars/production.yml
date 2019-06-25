@@ -1,5 +1,6 @@
 ---
-
+site_url: https://skyclerk.com
+app_user: skyclerk
 git_branch: master
 repo_url: git@github.com:cloudmanic/skyclerk.com.git
 site_path: /sites/skyclerk/skyclerk.com

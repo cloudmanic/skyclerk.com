@@ -1,7 +1,7 @@
 P_UID=1002
 P_GID=1002
 RESTART=always
-VIRTUAL_HOST=options.cafe,www.options.cafe,op.cafe,www.op.cafe
-LETSENCRYPT_HOST=options.cafe,www.options.cafe,op.cafe,www.op.cafe
-LETSENCRYPT_EMAIL=help@options.cafe
-COMPOSE_PROJECT_NAME=options.cafe
+VIRTUAL_HOST=skyclerk.com,www.skyclerk.com
+LETSENCRYPT_HOST=skyclerk.com,www.skyclerk.com
+LETSENCRYPT_EMAIL=help@skyclerk.com
+COMPOSE_PROJECT_NAME=skyclerk.com
