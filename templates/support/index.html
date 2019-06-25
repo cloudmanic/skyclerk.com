@@ -17,35 +17,19 @@
 				</div>
 
 				<div class="search search--large">
-					<form action="?" method="get">
-						<div class="search__body">
+
+					<form action="{{ url('support/search') }}" method="get">
+						<div class="search__body typeahead__container">
 							<label for="q" class="hidden">Search</label>
-
-							<input type="search" name="q" id="q" placeholder="Enter a question, keyword, or topic" class="search__field">
-
+							<input type="search" name="q" id="q" placeholder="Enter a question, keyword, or topic" class="search__field typeahead-support" autocomplete="off" />
 							<button type="submit" class="search__btn btn">
 								<i class="ico-search-grey"></i>
 							</button>
-
-							<div class="search__actions">
-								<ul>
-									<li>
-										<a href="#"><strong>SSS</strong> FAQs</a>
-									</li>
-
-									<li>
-										<a href="#">Configure <strong>SSL</strong></a>
-									</li>
-
-									<li>
-										<a href="#">Allow users to log in using <strong>SSL</strong></a>
-									</li>
-								</ul>
-							</div><!-- /.search__actions -->
-						</div><!-- /.search__body -->
+						</div>
 					</form>
-				</div><!-- /.search -->
-			</header><!-- /.section__head -->
+
+				</div>
+			</header>
 
 			<div class="section__body">
 				<div class="cols">

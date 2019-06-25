@@ -4,6 +4,7 @@
 
 	app.init = function() {
 		//this.contactUs();
+		this.supportSearch();
 		this.newsletterSubscribe();
 	};
 
@@ -111,6 +112,38 @@
         }
       });
 
+		});
+
+	};
+
+	/**
+	 * Setup support search
+	 *
+	 */
+	app.supportSearch = function() {
+
+		// Not on the page.
+		if($(".typeahead-support").length == 0) {
+			return;
+		}
+
+		// Setup the typeahead
+		$.typeahead({
+				input: ".typeahead-support",
+		    order: "desc",
+				minLength: 1,
+		    maxItem: 20,
+				href: "{{url}}",
+				emptyTemplate: "No results found for <b>{{query}}</b>",
+
+				source: {
+					support: {
+						display: "title",
+						ajax: {
+							url: "/support/json"
+						}
+	        }
+		    }
 		});
 
 	};
