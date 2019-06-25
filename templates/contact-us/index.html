@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="main main--inner">
+<div class="main main--inner contact-us">
 	<section class="section section--contacts">
 		<div class="shell">
 			<div class="section__container">
@@ -14,76 +14,78 @@
 
 				<div class="section__body">
 					<div class="form">
-						<form action="?" method="post">
+						<h1 class="success hide">Thank you for submitting your support request. We will get back to you very shorty.</h1>
+
+						<form class="submit" enctype="multipart/form-data">
+							{{ csrfInput() }}
+							<input type="hidden" name="action" value="contact-form/send" />
 							<div class="form__head">
 								<h2>The Support Team is Here to Help</h2>
-							</div><!-- /.form__head -->
+							</div>
 
 							<div class="form__body">
 								<div class="form__row">
 									<div class="form__controls">
 										<label for="email-address" class="form__label">What’s your email address?</label>
-
-										<input type="email" class="field" name="email-address" id="email-address">
+										<input type="email" class="field" name="fromEmail" id="email" />
 
 										<div class="form__error">
 											<p>
 												Email address is required.
 											</p>
-										</div><!-- /.form__error -->
-									</div><!-- /.form__controls -->
-								</div><!-- /.form__row -->
+										</div>
+									</div>
+								</div>
 
 								<div class="form__row">
 									<div class="form__controls">
 										<label for="help-with" class="form__label">What do you need help with?</label>
 
 										<div class="select">
-											<select name="help-with" id="help-with">
-												<option value="0" style="display: none;" selected="" disabled="">Please select one...</option>
-
-												<option value="1">Select 1#</option>
-
-												<option value="2">Select 2#</option>
-
-												<option value="3">Select 3#</option>
+											<select id="subject" name="subject" class="field subscribe__field">
+												<option value="">Please select one...</option>
+												<option value="I can't access my account">I can't access my account</option>
+												<option value="I have a question before I sign up">I have a question before I sign up</option>
+												<option value="I want to request a feature">I want to request a feature</option>
+												<option value="I have a billing question">I have a billing question</option>
+												<option value="I'm confused about how something works">I'm confused about how something works</option>
+												<option value="I think something is broken">I think something is broken</option>
+												<option value="Other support request">Other</option>
 											</select>
-										</div><!-- /.select -->
+										</div>
 
 										<div class="form__error">
 											<p>
 												Subject is required.
 											</p>
-										</div><!-- /.form__error -->
-									</div><!-- /.form__controls -->
-								</div><!-- /.form__row -->
+										</div>
+									</div>
+								</div>
 
 								<div class="form__row">
 									<div class="form__controls">
 										<label for="message" class="form__label">What’s your question, comment, or issue?</label>
-
-										<textarea class="textarea" name="message" id="message"></textarea>
-
+										<textarea class="textarea" name="message" id="body"></textarea>
 										<div class="form__error">
 											<p>
 												Body is required.
 											</p>
-										</div><!-- /.form__error -->
-									</div><!-- /.form__controls -->
-								</div><!-- /.form__row -->
-							</div><!-- /.form__body -->
+										</div>
+									</div>
+								</div>
+							</div>
 
 							<div class="form__actions">
-								<button type="submit" class="form__btn btn btn--size2">
-									Submit request
+								<button type="submit" class="form__btn btn btn--size2" id="submit-btn">
+									Submit Request
 								</button>
-							</div><!-- /.form__actions -->
+							</div>
 						</form>
-					</div><!-- /.form -->
-				</div><!-- /.section__body -->
-			</div><!-- /.section__container -->
-		</div><!-- /.shell -->
-	</section><!-- /.section -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	{% include "modules/_newsletter" %}
 </div>
