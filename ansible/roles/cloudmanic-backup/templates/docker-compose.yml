@@ -1,0 +1,61 @@
+# {{ ansible_managed }}
+
+version: '2.1'
+
+services:
+
+  # Backup
+  backup:
+
+    hostname: {{ backup_hostname }}
+
+    container_name: {{ backup_hostname }}
+
+    user: {{ backup_uid }}:{{ backup_gid }}     
+    
+    image: cloudmanic/cloudmanic-backup
+
+    restart: always
+
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: tcp+tls://{{ syslog_address }}:{{ syslog_port }}
+        tag: {{ backup_hostname }}
+
+    environment:   
+      BACKUP_NAME: {{ backup_name }}     
+      ALERT_EMAIL: {{ backup_email }}    
+      OBJECT_REGION: {{ object_region }}
+      OBJECT_BUCKET: {{ backup_object_bucket }}
+      OBJECT_ACCESS_KEY_ID: {{ object_access_key }}
+      OBJECT_SECRET_ACCESS_KEY: {{ object_secret_key }}
+      OBJECT_ENDPOINT: {{ object_endpoint }}      
+      MYSQL_HOST: {{ backup_db_host }}
+      MYSQL_PORT: {{ backup_db_port }}
+      MYSQL_DB: {{ backup_db_name }}
+      MYSQL_USER: {{ db_username }}
+      MYSQL_PASSWORD: {{ db_password }}      
+      MAIL_DRIVER: {{ backup_email_driver }}
+      MAIL_HOST: 
+      MAIL_PORT: 
+      MAIL_USERNAME: 
+      MAIL_PASSWORD: 
+      MAIL_ENCRYPTION: 
+      MAIL_FROM_EMAIL: {{ backup_email }}      
+      MAILGUN_DOMAIN: {{ mailgun_domain }}
+      MAILGUN_API_KEY: {{ mailgun_api_key }}      
+      ENCRYPT_KEY: {{ app_backup_encryption_key }}     
+      BACKUP_DB_STORE_DIR: {{ backup_name }}      
+      HOURS_BETWEEN_BACKUPS: {{ backup_hours_between }}     
+      DB_SIZE_CHECK_LOW: {{ backup_db_low_size }}     
+      DB_SIZE_CHECK_HIGH: {{ backup_db_high_size }}      
+      PING_SUCCESS_URL: {{ backup_success_ping_url }}
+
+    networks:
+      - shared
+
+networks:
+  shared:
+    external:
+      name: shared

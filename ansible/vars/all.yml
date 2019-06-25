@@ -1,0 +1,63 @@
+---
+
+app_user: skyclerk
+
+spicer_uid: 1000
+spicer_gid: 1000
+
+deploy_uid: 1001
+deploy_gid: 1001
+
+syslog_port: 49242
+syslog_address: logs6.papertrailapp.com
+
+docker_mysql: yes
+
+docker_mysql_servers:
+  - { "name": "mariadb102", "image": "mariadb:10.2", "container_name": "mariadb-10.2", "port_mapping": "127.0.0.1:3306", "password": "{{ MYSQL_ROOT_PASSWORD }}" }
+
+docker_nginx_proxy: yes
+
+docker_site_dir: /sites
+
+docker_nginx_proxy_dir: /sites/nginx-proxy
+
+docker_mysql_dir: /sites/mysql
+
+docker_sites:
+  - { site_slug: "skyclerk", uid: "1002", gid: "1002" }
+
+core_packages:
+  - git-core
+  - vim
+  - ntp
+  - nmap
+  - php-cli
+  - mysql-client
+  - docker.io
+  - docker-compose
+
+# S3 Storage Stuff
+object_region: us-east-1
+object_bucket: skyclerk.com
+object_endpoint: s3.wasabisys.com
+
+# Backup configs
+backup_uid: 1002
+backup_gid: 1002
+backup_user: skyclerk
+backup_group: skyclerk
+backup_db_port: 3306
+backup_db_host: mariadb-10.2
+backup_db_name: options_cafe
+backup_name: skyclerk.com
+backup_host: skyclerk.com
+backup_email_driver: mailgun
+backup_email: help@skyclerk.com
+backup_hostname: backup.skyclerk.com
+backup_db_low_size: 10000000
+backup_db_high_size: 100000000
+backup_hours_between: 24
+backup_object_bucket: db-backups
+backup_success_ping_url: https://hc-ping.com/73b7bcd1-7be4-41ac-bda2-639a2b0b11eb
+backup_site_dir: /sites/skyclerk/backup.skyclerk.com

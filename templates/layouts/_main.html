@@ -14,12 +14,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	{% hook "seo" %}
 	<link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/colorbox.css">
 	<link rel="stylesheet" type="text/css" href="/assets/vendor/jquery.typeahead.min.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css?rel=1561471264076">
 
 	<script src="{{ url('assets/vendor/jquery-3.1.1.min.js') }}" defer></script>
 	<script src="{{ url('assets/vendor/jquery.typeahead.min.js') }}" defer></script>
-	<script src="/assets/js/app.js?rel=1561471259725" defer></script>
+	<script src="{{ url('assets/vendor/jquery.colorbox-min.js') }}" defer></script>
+	<script src="/assets/js/app.js?rel=1561500708214" defer></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102266466-2"></script>
@@ -56,9 +58,9 @@
 									<a href="{{ url('') }}">Home</a>
 								</li>
 
-								<li class="{% if craft.request.firstSegment == 'blog' %}current{% endif %}">
+								<!-- <li class="{% if craft.request.firstSegment == 'blog' %}current{% endif %}">
 									<a href="{{ url('blog') }}">Blog</a>
-								</li>
+								</li> -->
 
 								<li class="{% if craft.request.firstSegment == 'support' %}current{% endif %}">
 									<a href="{{ url('support') }}">Support</a>

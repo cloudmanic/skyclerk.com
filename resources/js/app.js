@@ -3,11 +3,29 @@
 	window.app = app;
 
 	app.init = function() {
+		this.youtubeModal();
 		this.contactUs();
 		this.supportSearch();
 		this.newsletterSubscribe();
 	};
 
+	/**
+	 * Youtube Modal
+	 *
+	 */
+	app.youtubeModal = function() {
+		// Not on the page.
+		if($(".youtube").length == 0) {
+			return;
+		}
+
+		// Setup colorbox
+		$(".youtube").colorbox({
+			iframe: true,
+			innerWidth: 640,
+			innerHeight: 390
+		});
+	},
 
 	/**
 	 * Contact us page
