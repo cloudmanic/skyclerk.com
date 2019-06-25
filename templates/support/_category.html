@@ -1,5 +1,6 @@
 {% extends "layouts/_main" %}
 
+{% set category = craft.categories.group('support').slug(craft.app.request.getSegment(2)).first() %}
 {% set categories = craft.categories.group('support') %}
 
 {% block content %}
@@ -24,12 +25,11 @@
 			<div class="section__body">
 				<div class="cols">
 
-					{% for row in categories.all() %}
 					<div class="col col--1of3">
 						<div class="section__entry">
-							<h3>{{ row.title }}</h3>
+							<h3>{{ category.title }}</h3>
 
-							{% set e = craft.entries.section('support').relatedTo(row).orderBy('postDate desc') %}
+							{% set e = craft.entries.section('support').relatedTo(category).orderBy('postDate desc') %}
 							<ul class="list-categories">
 								{% for row2 in e.all() %}
 								<li>
@@ -39,7 +39,6 @@
 							</ul>
 						</div>
 					</div>
-					{% endfor %}
 
 				</div>
 			</div>

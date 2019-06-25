@@ -1,1 +1,57 @@
-asdf
+{% extends "layouts/_main" %}
+
+{% set searchQuery = craft.app.request.getParam('q') %}
+{% set results = craft.entries.section('support').search(searchQuery) %}
+
+{% block content %}
+
+<div class="main main--inner">
+	<section class="section section--search">
+		<div class="shell">
+			<header class="section__head">
+				<div class="section__head-inner">
+					<h1>Search results for <b>{{ searchQuery }}</b></h1>
+
+					<a href="{{ url('contact-us') }}" class="btn btn--transparent">
+						Contact Us
+					</a>
+				</div>
+
+				<div class="search search--large">
+					{% include "support/_search_field" %}
+				</div>
+			</header>
+
+			<div class="section__body">
+
+				{% for row in results.all() %}
+				<div class="search-results">
+					<div class="search-result">
+						<div class="search__head">
+							<h3>{{ row.title }}</h3>
+
+							<h6>
+								Last Updated: 03/26/2019 in
+								<a href="{{ url('support') }}">Support</a>
+								<span class="separator">>></span>
+								<a href="{{ row.supportCategory.first().url }}">{{ row.supportCategory.first().title }}</a>
+								<span class="separator">>></span>
+								<a href="{{ row.url }}">{{ row.title }}</a>
+							</h6>
+						</div>
+
+						<div class="search__body">
+							<p>{{ row.supportBody | chop }}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+			</div>
+	</section>
+
+	{% include "modules/_newsletter" %}
+
+</div>
+
+{% endblock %}

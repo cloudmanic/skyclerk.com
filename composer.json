@@ -6,6 +6,7 @@
     "doublesecretagency/craft-cpjs": "2.1.0",
     "ether/seo": "3.5.4",
     "mmikkel/cp-field-inspect": "1.0.5",
+    "topshelfcraft/wordsmith": "3.0.5",
     "vlucas/phpdotenv": "^2.4.0"
   },
   "autoload": {
