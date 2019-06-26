@@ -2,7 +2,7 @@
 
 - name: Deploys the server config for skyclerk.com to production
 
-  hosts: web-servers
+  hosts: servers
 
   become: yes
 

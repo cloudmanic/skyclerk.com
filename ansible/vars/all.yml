@@ -47,13 +47,13 @@ backup_user: skyclerk
 backup_group: skyclerk
 backup_db_port: 3306
 backup_db_host: mariadb-10.2
-backup_db_name: options_cafe
+backup_db_name: skyclerk_com
 backup_name: skyclerk.com
 backup_host: skyclerk.com
 backup_email_driver: mailgun
 backup_email: help@skyclerk.com
 backup_hostname: backup.skyclerk.com
-backup_db_low_size: 10000000
+backup_db_low_size: 500000
 backup_db_high_size: 100000000
 backup_hours_between: 24
 backup_object_bucket: db-backups
