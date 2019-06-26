@@ -1,9 +1,14 @@
 {% extends "layouts/_main" %}
 
+{% set loginUrl = getenv('APP_LOGIN_URL') %}
+{% set registerUrl = getenv('APP_REGISTER_URL') %}
 {% set priceYear = getenv('PRICE_PER_YEAR') %}
 {% set priceMonth = getenv('PRICE_PER_MONTH') %}
 
 {% set trialDays = getenv('TRIAL_DAYS') %}
+
+{% set appleUrl = getenv('APP_STORE_APPLE') %}
+{% set androidUrl = getenv('APP_STORE_ANDROID') %}
 
 {% block content %}
 
@@ -17,7 +22,7 @@
 			<div class="shell">
 				<div class="intro__inner">
 					<div class="intro__content">
-						<a href="#" class="logo logo--intro"></a>
+						<a href="{{ url('') }}" class="logo logo--intro"></a>
 
 						<h3>Making bookkeeping a breeze!</h3>
 
@@ -46,87 +51,87 @@
 							</div>
 						</div>
 
-					</div><!-- /.intro__content -->
-				</div><!-- /.intro__inner -->
-			</div><!-- /.shell -->
-		</div><!-- /.intro__body -->
-	</div><!-- /.intro -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<section class="section section--services">
 		<div class="shell">
 			<div class="partners">
 				<div class="partners__aside">
 					<h5>Featured In:</h5>
-				</div><!-- /.partners__aside -->
+				</div>
 
 				<div class="partners__content">
 					<ul class="list-partners">
 						<li class="has-tooltip">
-							<a href="#" class="logo-p-silicon">
+							<a href="{{ url('') }}" class="logo-p-silicon">
 								<img src="assets/images/temp/partner-1.png" alt="" width="164" height="49">
 
 								<div class="tooltip">
 									<p>“Wow. Your life just got easier!”</p>
-								</div><!-- /.tooltip -->
+								</div>
 							</a>
 						</li>
 
 						<li class="has-tooltip">
-							<a href="#" class="logo-p-tnw">
+							<a href="{{ url('') }}" class="logo-p-tnw">
 								<img src="assets/images/temp/partner-2.png" alt="" width="76" height="18">
 
 								<div class="tooltip">
 									<p>“Wow. Your life just got easier!”</p>
-								</div><!-- /.tooltip -->
+								</div>
 							</a>
 						</li>
 
 						<li class="has-tooltip">
-							<a href="#" class="logo-p-tripwire">
+							<a href="{{ url('') }}" class="logo-p-tripwire">
 								<img src="assets/images/temp/partner-3.png" alt="" width="71" height="29">
 
 								<div class="tooltip">
 									<p>“Wow. Your life just got easier!”</p>
-								</div><!-- /.tooltip -->
+								</div>
 							</a>
 						</li>
 
 						<li class="has-tooltip">
-							<a href="#" class="logo-p-design">
+							<a href="{{ url('') }}" class="logo-p-design">
 								<img src="assets/images/temp/partner-4.png" alt="" width="98" height="25">
 
 								<div class="tooltip">
 									<p>“Wow. Your life just got easier!”</p>
-								</div><!-- /.tooltip -->
+								</div>
 							</a>
 						</li>
 
 						<li class="has-tooltip">
-							<a href="#" class="logo-p-abduzeedo">
+							<a href="{{ url('') }}" class="logo-p-abduzeedo">
 								<img src="assets/images/temp/partner-5.png" alt="" width="144" height="24">
 
 								<div class="tooltip">
 									<p>“Wow. Your life just got easier!”</p>
-								</div><!-- /.tooltip -->
+								</div>
 							</a>
 						</li>
 
 						<li class="has-tooltip">
-							<a href="#" class="logo-p-dzone">
+							<a href="{{ url('') }}" class="logo-p-dzone">
 								<img src="assets/images/temp/partner-6.png" alt="" width="48" height="49">
 
 								<div class="tooltip">
 									<p>“Wow. Your life just got easier!”</p>
-								</div><!-- /.tooltip -->
+								</div>
 							</a>
 						</li>
-					</ul><!-- /.list-partners -->
-				</div><!-- /.partners__content -->
-			</div><!-- /.partners -->
+					</ul>
+				</div>
+			</div>
 
 			<header class="section__head">
-				<h1 class="section__title">Saves You From the Hassle of Bookkeeping while Keeping You Stay on Track.</h1><!-- /.section__title -->
-			</header><!-- /.section__head -->
+				<h1 class="section__title">Saves You From the Hassle of Bookkeeping while Keeping You Stay on Track.</h1>
+			</header>
 
 			<div class="section__body">
 				<div class="service service--size2 service--image-size2">
@@ -137,17 +142,17 @@
 
 								<p>Upon login, all you need is one quick glance to know how well your business is doing.</p>
 
-								<a href="#" class="btn btn--size2">
+								<a href="{{ registerUrl }}" class="btn btn--size2">
 									Try It for Free!
 								</a>
-							</div><!-- /.service__entry -->
-						</div><!-- /.service__content -->
+							</div>
+						</div>
 
 						<div class="service__image service__image--top-xs">
 							<img src="assets/images/temp/service-image-1.png" alt="" width="551" height="370">
-						</div><!-- /.service__image -->
-					</div><!-- /.service__body -->
-				</div><!-- /.service -->
+						</div>
+					</div>
+				</div>
 
 				<div class="service service--size2 service--image-right">
 					<div class="service__body">
@@ -155,28 +160,28 @@
 							<div class="service__entry">
 								<h2>Income &amp; Expense Tracking</h2>
 
-								<p>Keep track of who has paid and who still owes you some cash flow. Edit ledger items right from your contact’s page.</p>
+								<p>Keep track of who has paid and who still owes you some cash flow. Edit ledger items right from your ledger page.</p>
 
-								<p>As a bonus, we’ve added a handy Note tab for each contact.</p>
+								<p>As a bonus, we’ve added a handy Note tab for each ledger entry.</p>
 
-								<a href="#" class="btn btn--size2">
+								<a href="{{ registerUrl }}" class="btn btn--size2">
 									See It for Yourself
 								</a>
-							</div><!-- /.service__entry -->
-						</div><!-- /.service__content -->
+							</div>
+						</div>
 
 						<div class="service__image">
 							<img src="assets/images/temp/service-image-2.png" alt="" width="526" height="416">
-						</div><!-- /.service__image -->
-					</div><!-- /.service__body -->
-				</div><!-- /.service -->
+						</div>
+					</div>
+				</div>
 
 				<div class="callout-centered">
 					<div class="callout__body">
 						<div class="callout__head">
 							<div class="callout__image">
 								<img src="assets/images/temp/callout-centered-image.png" alt="" width="570" height="443">
-							</div><!-- /.callout__image -->
+							</div>
 
 							<div class="callout__info">
 								<p>
@@ -190,33 +195,33 @@
 								<p>
 									<strong>You</strong> live your life
 								</p>
-							</div><!-- /.callout__info -->
-						</div><!-- /.callout__head -->
+							</div>
+						</div>
 
 						<div class="callout__content">
 							<div class="callout__entry">
 								<h2>Go Paperless with Snap!Clerk</h2>
 
-								<p>Our number 1 goal is to help businesses go paperless. That’s also why we’ve partnered with Shoeboxed</p>
+								<p>Our number 1 goal is to help businesses go paperless.</p>
 
 								<ul class="list-buttons list-buttons--apps">
 									<li>
-										<a href="#" class="btn btn--app btn--app-store" style="background-image: url(assets/images/temp/app-store.png);">
+										<a href="{{ appleUrl }}" class="btn btn--app btn--app-store" style="background-image: url(assets/images/temp/app-store.png);">
 											App Store
 										</a>
 									</li>
 
 									<li>
-										<a href="#" class="btn btn--app" style="background-image: url(assets/images/temp/google-play.png);">
+										<a href="{{ androidUrl }}" class="btn btn--app" style="background-image: url(assets/images/temp/google-play.png);">
 											Google Play
 										</a>
 									</li>
-								</ul><!-- /.list-buttons -->
-							</div><!-- /.callout__entry -->
-						</div><!-- /.callout__content -->
+								</ul>
+							</div>
+						</div>
 
-					</div><!-- /.callout__body -->
-				</div><!-- /.callout-centered -->
+					</div>
+				</div>
 
 				<div class="service service--size3 service--image-right">
 					<div class="service__body">
@@ -228,17 +233,17 @@
 
 								<p>That’s why we’ve dedicated an entire section to </p>
 
-								<a href="#" class="btn btn--size2">
+								<a href="{{ registerUrl }}" class="btn btn--size2">
 									Try It Out
 								</a>
-							</div><!-- /.service__entry -->
-						</div><!-- /.service__content -->
+							</div>
+						</div>
 
 						<div class="service__image">
 							<img src="assets/images/temp/service-image-3.png" alt="" width="470" height="310">
-						</div><!-- /.service__image -->
-					</div><!-- /.service__body -->
-				</div><!-- /.service -->
+						</div>
+					</div>
+				</div>
 
 				<div class="service service--size4">
 					<div class="service__body">
@@ -253,14 +258,14 @@
 
 									<br>And we hope you are, too.
 								</p>
-							</div><!-- /.service__entry -->
-						</div><!-- /.service__content -->
+							</div>
+						</div>
 
 						<div class="service__image service__image--top-xs">
 							<img src="assets/images/temp/service-image-4.png" alt="" width="475" height="548">
-						</div><!-- /.service__image -->
-					</div><!-- /.service__body -->
-				</div><!-- /.service -->
+						</div>
+					</div>
+				</div>
 
 				<ul class="list-services">
 					<li>
@@ -280,18 +285,18 @@
 
 						<h2>No Contracts</h2>
 
-						<p>Pay as you go and cancel any time (unless you’re on the free plan of course... well then it’s just free!).</p>
+						<p>Pay as you go and cancel any time.</p>
 					</li>
-				</ul><!-- /.list-services -->
-			</div><!-- /.section__body -->
-		</div><!-- /.shell -->
-	</section><!-- /.section -->
+				</ul>
+			</div>
+		</div>
+	</section>
 
 	<div class="callout-stats">
 		<div class="shell">
 			<div class="callout__head">
 				<h1>Get the Same Benefits from Other Services for a Reasonable Price.</h1>
-			</div><!-- /.callout__head -->
+			</div>
 
 			<div class="callout__body">
 				<div class="service-stats">
@@ -299,13 +304,13 @@
 						<div class="service__inner">
 							<div class="service__content">
 								<p>Platform</p>
-							</div><!-- /.service__content -->
+							</div>
 
 							<div class="service__aside">
 								<p>Cost/Year</p>
-							</div><!-- /.service__aside -->
-						</div><!-- /.service__inner -->
-					</div><!-- /.service__head -->
+							</div>
+						</div>
+					</div>
 
 					<div class="service__body">
 						<div class="service__entry active">
@@ -320,9 +325,9 @@
 									<p>
 										${{ priceYear }} /year
 									</p>
-								</div><!-- /.service__aside -->
-							</div><!-- /.service__inner -->
-						</div><!-- /.service__entry -->
+								</div>
+							</div>
+						</div>
 
 						<div class="service__entry service__entry--size2">
 							<div class="service__inner">
@@ -336,9 +341,9 @@
 									<p>
 										$240 /year
 									</p>
-								</div><!-- /.service__aside -->
-							</div><!-- /.service__inner -->
-						</div><!-- /.service__entry -->
+								</div>
+							</div>
+						</div>
 
 						<div class="service__entry">
 							<div class="service__inner">
@@ -352,9 +357,9 @@
 									<p>
 										$360 /year
 									</p>
-								</div><!-- /.service__aside -->
-							</div><!-- /.service__inner -->
-						</div><!-- /.service__entry -->
+								</div>
+							</div>
+						</div>
 
 						<div class="service__entry service__entry--size2">
 							<div class="service__inner">
@@ -368,20 +373,20 @@
 									<p>
 										$240 /year
 									</p>
-								</div><!-- /.service__aside -->
-							</div><!-- /.service__inner -->
-						</div><!-- /.service__entry -->
-					</div><!-- /.service__body -->
-				</div><!-- /.service-stats -->
-			</div><!-- /.callout__body -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<div class="callout__actions">
-				<a href="#" class="btn btn--size3">
+				<a href="{{ registerUrl }}" class="btn btn--size3">
 					Try for {{ trialDays }} Days Free
 				</a>
-			</div><!-- /.callout__actions -->
-		</div><!-- /.shell -->
-	</div><!-- /.callout-stats -->
+			</div>
+		</div>
+	</div>
 
 	<div class="callout callout--apps">
 		<div class="shell">
@@ -395,27 +400,27 @@
 
 							<ul class="list-buttons list-buttons--apps">
 								<li>
-									<a href="#" class="btn btn--app btn--app-store" style="background-image: url(assets/images/temp/app-store.png);">
+									<a href="{{ appleUrl }}" class="btn btn--app btn--app-store" style="background-image: url(assets/images/temp/app-store.png);">
 										App Store
 									</a>
 								</li>
 
 								<li>
-									<a href="#" class="btn btn--app" style="background-image: url(assets/images/temp/google-play.png);">
+									<a href="{{ androidUrl }}" class="btn btn--app" style="background-image: url(assets/images/temp/google-play.png);">
 										Google Play
 									</a>
 								</li>
-							</ul><!-- /.list-buttons -->
-						</div><!-- /.service__entry -->
-					</div><!-- /.service__content -->
+							</ul>
+						</div>
+					</div>
 
 					<div class="service__image">
-						<img src="assets/images/temp/callout-image-1.png" alt="" width="298" height="408">
-					</div><!-- /.service__image -->
-				</div><!-- /.service__body -->
-			</div><!-- /.service -->
-		</div><!-- /.shell -->
-	</div><!-- /.callout -->
+						<img src="assets/images/temp/callout-image-1.png" alt="" width="298" height="408" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="callout callout--get-started" style="background-image: url(assets/images/temp/callout-image-2.jpg);">
 		<div class="shell">
