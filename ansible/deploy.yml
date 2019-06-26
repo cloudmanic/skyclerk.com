@@ -2,11 +2,7 @@
 
 - name: Deploys the site to production
 
-  hosts: servers
-
-  become: yes
-
-  become_user: skyclerk
+  hosts: app-servers
 
   roles:
     - app

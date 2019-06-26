@@ -1,2 +1,6 @@
 [servers]
 skyclerk.com ansible_user=spicer
+
+# hack to support logging in as another user
+[app-servers]
+www.skyclerk.com ansible_user=skyclerk
