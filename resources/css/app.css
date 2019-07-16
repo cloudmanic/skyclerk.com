@@ -1,3 +1,4 @@
 .hide { display: none; }
 .newsletterSuccessMsg { display: none; }
 .nav .current a { color: #6fa33d; }
+.article figure { margin-bottom: .75em; }
