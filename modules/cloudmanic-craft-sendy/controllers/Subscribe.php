@@ -24,6 +24,8 @@ class SubscribeController extends Controller
   //
   public function actionIndex()
   {
+    $CrawlerDetect = new CrawlerDetect;
+
     $post = json_decode(Craft::$app->request->getRawBody(), true);
 
     // Get the email
@@ -35,6 +37,11 @@ class SubscribeController extends Controller
     // Validate email
     if(! filter_var($email, FILTER_VALIDATE_EMAIL))
     {
+      return $this->asJson([ 'status' => 0 ]);
+    }
+
+    // Honeypot trap
+    if($CrawlerDetect->isCrawler()) {
       return $this->asJson([ 'status' => 0 ]);
     }
 

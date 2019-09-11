@@ -13,6 +13,7 @@ namespace modules\Skyclerk\controllers;
 use Craft;
 use craft\web\Controller;
 use yii\web\Response;
+use Jaybizzle\CrawlerDetect\CrawlerDetect;
 
 class SignupController extends Controller
 {
@@ -24,12 +25,18 @@ class SignupController extends Controller
   //
   public function actionIndex()
   {
+    $CrawlerDetect = new CrawlerDetect;
+
     $email = Craft::$app->request->getBodyParam('email');
     $name = Craft::$app->request->getBodyParam('name');
 
     // Honeypot trap
     if(strlen($name) > 0)
     {
+      return $this->redirect('');
+    }
+
+    if($CrawlerDetect->isCrawler()) {
       return $this->redirect('');
     }
 

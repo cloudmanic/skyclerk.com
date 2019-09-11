@@ -8,6 +8,7 @@
     "dolphiq/sitemap": "1.0.9",
     "doublesecretagency/craft-cpjs": "2.2.0",
     "ether/seo": "3.5.4",
+    "jaybizzle/crawler-detect": "^1.2",
     "mmikkel/cp-field-inspect": "1.0.5",
     "topshelfcraft/wordsmith": "3.0.5",
     "vlucas/phpdotenv": "^2.4.0"
