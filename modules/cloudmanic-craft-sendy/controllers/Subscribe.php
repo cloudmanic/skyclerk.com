@@ -13,6 +13,7 @@ namespace modules\CloudmanicCraftSendy\controllers;
 use Craft;
 use craft\web\Controller;
 use yii\web\Response;
+use Jaybizzle\CrawlerDetect\CrawlerDetect;
 
 class SubscribeController extends Controller
 {
