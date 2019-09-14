@@ -124,7 +124,13 @@
 					// Log events.
 					_paq.push(['trackGoal', 1]);
 					_paq.push(['trackEvent', 'Newsletter', 'Subscribe']);
-					ga('send', 'event', 'Newsletter', 'Subscribe');
+
+					if ("ga" in window) {
+            tracker = ga.getAll()[0];
+            if (tracker) {
+              tracker.send("event", "Newsletter", "Subscribe");
+            }
+          }
         }
       });
 
