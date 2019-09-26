@@ -1,0 +1,45 @@
+<form action="" method="post">
+	<div class="subscribe__head">
+		<h2>Try skyclerk for {{ $.Site.Params.trialDays }} Days Free!</h2>
+		<!-- <h4>Try skyclerk for {{ $.Site.Params.trialDays }} Days Free!</h4> -->
+	</div>
+
+	<div class="subscribe__body">
+		<label for="mail">
+			<svg version="1.1" id="mail-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+				<style type="text/css">
+					.st0-mail {
+						fill: #8A949B;
+					}
+
+				</style>
+				<g>
+					<g>
+						<path class="st0-mail" d="M463.6,454.5c11.4,0,21.3-3.8,29.7-11.2L349.4,299.4c-3.5,2.5-6.8,4.9-10,7.2c-10.8,7.9-19.5,14.1-26.2,18.6
+						c-6.7,4.4-15.6,9-26.8,13.6c-11.1,4.6-21.5,6.9-31.2,6.9H255h-0.3c-9.6,0-20-2.3-31.2-6.9c-11.1-4.6-20.1-9.2-26.8-13.6
+						c-6.7-4.4-15.4-10.6-26.2-18.6c-3-2.2-6.3-4.6-9.9-7.2L16.7,443.3c8.4,7.4,18.3,11.2,29.7,11.2H463.6z"></path>
+						<path class="st0-mail" d="M29.7,208.8C19,201.6,9.4,193.4,1.1,184.2V403l126.8-126.8C102.5,258.5,69.9,236.1,29.7,208.8z"></path>
+						<path class="st0-mail" d="M480.6,208.8c-38.6,26.1-71.4,48.6-98.4,67.5l126.8,126.8V184.2C500.8,193.2,491.3,201.4,480.6,208.8z"></path>
+						<path class="st0-mail" d="M463.6,55.5H46.4c-14.6,0-25.7,4.9-33.6,14.7C5,80.1,1.1,92.3,1.1,107.1c0,11.9,5.2,24.8,15.6,38.7
+						c10.4,13.9,21.4,24.8,33.2,32.7c6.4,4.5,25.8,18,58.1,40.4c17.4,12.1,32.6,22.6,45.6,31.7c11.1,7.7,20.7,14.4,28.6,20
+						c0.9,0.6,2.3,1.7,4.2,3c2,1.5,4.6,3.3,7.8,5.6c6.1,4.4,11.2,8,15.3,10.8c4.1,2.7,9,5.8,14.7,9.2c5.8,3.4,11.2,6,16.3,7.7
+						c5.1,1.7,9.8,2.6,14.2,2.6h0.3h0.3c4.3,0,9.1-0.9,14.2-2.6c5.1-1.7,10.5-4.2,16.3-7.7c5.8-3.4,10.7-6.5,14.7-9.2
+						c4.1-2.7,9.2-6.3,15.3-10.8c3.2-2.3,5.8-4.2,7.8-5.6c1.9-1.4,3.3-2.4,4.2-3c6.2-4.3,15.8-11,28.7-19.9
+						c23.5-16.3,58.1-40.3,103.9-72.2c13.8-9.6,25.3-21.3,34.6-34.9c9.2-13.6,13.9-27.9,13.9-42.8c0-12.5-4.5-23.1-13.5-32
+						C486.5,59.9,475.8,55.5,463.6,55.5z"></path>
+					</g>
+				</g>
+			</svg>
+		</label>
+
+		<input type="text" class="subscribe__field field hidden" name="name" id="subscribe-name" value="" placeholder="Name..." />
+
+		<input type="email" id="mail" name="email" value="" placeholder="Your Email Address" class="subscribe__field field">
+
+		<button type="submit" class="subscribe__btn btn btn--block btn--size2">Get Started</button>
+	</div>
+
+	<div class="subscribe__foot">
+		<p>Only ${{ $.Site.Params.priceMonth }}/month, or ${{ $.Site.Params.priceYear }}/year</p>
+	</div>
+</form>
