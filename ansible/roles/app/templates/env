@@ -12,7 +12,7 @@ DB_SCHEMA="public"
 DB_TABLE_PREFIX=""
 DB_PORT="{{ DB_PORT }}"
 
-SITE_URL="{{ site_url }}"
+DEFAULT_SITE_URL="{{ site_url }}"
 
 # App Stuff
 APP_LOGIN_URL="https://skyclerk.cloudmanic.com"
