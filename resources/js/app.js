@@ -7,6 +7,12 @@
 		this.contactUs();
 		this.supportSearch();
 		this.newsletterSubscribe();
+
+		$('.btn-menu').on('click', function(e) {
+			e.preventDefault();
+
+			$(this).add('.header').toggleClass('active');
+		});		
 	};
 
 	/**
