@@ -1,7 +1,10 @@
 <form action="" method="post">
 	<div class="subscribe__head">
-		<h2>Try skyclerk for {{ $.Site.Params.trialDays }} Days Free!</h2>
-		<!-- <h4>Try skyclerk for {{ $.Site.Params.trialDays }} Days Free!</h4> -->
+		{{ if eq .header "h2" }}
+		<h2>Try skyclerk for {{ .Site.Params.trialDays }} Days Free!</h2>
+		{{ else }}
+		<h4>Try skyclerk for {{ .Site.Params.trialDays }} Days Free!</h4>
+		{{ end }}
 	</div>
 
 	<div class="subscribe__body">
@@ -40,6 +43,6 @@
 	</div>
 
 	<div class="subscribe__foot">
-		<p>Only ${{ $.Site.Params.priceMonth }}/month, or ${{ $.Site.Params.priceYear }}/year</p>
+		<p>Only ${{ .Site.Params.priceMonth }}/month, or ${{ .Site.Params.priceYear }}/year</p>
 	</div>
 </form>
