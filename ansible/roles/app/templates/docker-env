@@ -1,7 +1,7 @@
 P_UID=1002
 P_GID=1002
 RESTART=always
-VIRTUAL_HOST=skyclerk.com,www.skyclerk.com
-LETSENCRYPT_HOST=skyclerk.com,www.skyclerk.com
+VIRTUAL_HOST=skyclerk.com,www.skyclerk.com,skyclerk.cloudmanic.com,accounts.cloudmanic.com,centcom.cloudmanic.com
+LETSENCRYPT_HOST=skyclerk.com,www.skyclerk.com,skyclerk.cloudmanic.com,accounts.cloudmanic.com,centcom.cloudmanic.com
 LETSENCRYPT_EMAIL=help@skyclerk.com
 COMPOSE_PROJECT_NAME=skyclerk.com
