@@ -15,8 +15,8 @@ DB_PORT="{{ DB_PORT }}"
 DEFAULT_SITE_URL="{{ site_url }}"
 
 # App Stuff
-APP_LOGIN_URL="https://skyclerk.cloudmanic.com"
-APP_REGISTER_URL="https://accounts.cloudmanic.com/register/skyclerk?redirect=http://skyclerk.cloudmanic.com&plan=SKYCLERK-BASIC-0.00-03-24-2013&email="
+APP_LOGIN_URL="https://app.skyclerk.com"
+APP_REGISTER_URL="https://app.skyclerk.com/register/"
 
 # Pricing
 TRIAL_DAYS=15
