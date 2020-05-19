@@ -2,4 +2,58 @@
 
 @tailwind components;
 
+
+/* Buttons */
+.btn { @apply items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 transition duration-150 ease-in-out }
+.btn:focus { @apply outline-none shadow-outline }
+.btn:hover { @apply bg-indigo-500 }
+.btn-black { @apply bg-gray-900 px-5 py-3 border border-transparent }
+.btn-black:focus { @apply outline-none shadow-outline }
+.btn-black:hover { @apply bg-gray-800 outline-none shadow-outline }
+.btn-small { @apply }
+
+/* Nav */
+nav .links .link { @apply font-medium text-gray-500 transition duration-150 ease-in-out }
+nav .links .link:focus { @apply outline-none text-gray-900 }
+nav .links .link:hover { @apply text-gray-900 }
+nav .links .sign-in { @apply text-indigo-600 transition duration-150 ease-in-out }
+nav .links .sign-in:hover { @apply text-indigo-900 }
+nav .links .sign-in:focus { @apply outline-none text-indigo-700 }
+.mobile-links { @apply block rounded-md text-base font-medium text-gray-700 transition duration-150 ease-in-out }
+.mobile-links:hover { @apply text-gray-900 bg-gray-50 }
+.mobile-links:focus { @apply outline-none text-gray-900 bg-gray-50 }
+
+/* Hero */
+.hero { @apply mt-10 mx-auto max-w-screen-xl px-4 }
+.hero .cont .title { @apply text-4xl tracking-tight leading-10 font-extrabold text-gray-900 }
+.hero .cont .sub-title { @apply mt-3 text-base text-gray-500 }
+.hero .cont .cta { @apply mt-5 }
+
+@screen sm {
+	.hero { @apply mt-12 px-6 }
+	.hero .cont { @apply text-center }
+	.hero .cont .title { @apply text-5xl leading-none }
+	.hero .cont .title span { @apply text-indigo-600 }
+	.hero .cont .sub-title { @apply mt-5 text-lg max-w-xl mx-auto }
+	.hero .cont .cta { @apply mt-8 flex justify-center }
+}
+
+@screen md {
+	.hero { @apply mt-16 }
+	.hero .cont .title { @apply text-6xl }
+	.hero .cont .sub-title { @apply mt-5 text-xl }
+	.hero .cont .cta .btn { @apply py-4 text-lg px-10 }
+}
+
+@screen lg {
+	.hero { @apply mt-20 px-8  }
+	.hero .cont { @apply text-left }
+	.hero .cont .sub-title { @apply mx-0 }
+	.hero .cont .cta { @apply justify-start }
+}
+
+@screen xl {
+	.hero { @apply mt-28  }
+}
+
 @tailwind utilities;
