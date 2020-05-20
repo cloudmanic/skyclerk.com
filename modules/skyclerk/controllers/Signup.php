@@ -50,7 +50,8 @@ class SignupController extends Controller
         'boolean' => 'true',
         'ipaddress' => Craft::$app->request->userIP,
         'referrer' => 'https://skyclerk.com',
-        'Signup' => 'Yes'
+	'Signup' => 'Yes',
+	'api_key' => getenv("SENDY_API_KEY")
       ]);
 
       $opts = [ 'http' => [ 'method'  => 'POST', 'header'  => 'Content-type: application/x-www-form-urlencoded', 'content' => $postdata ]];
@@ -64,7 +65,8 @@ class SignupController extends Controller
         'boolean' => 'true',
         'ipaddress' => Craft::$app->request->userIP,
         'referrer' => 'https://skyclerk.com',
-        'Signup' => 'Yes'
+	'Signup' => 'Yes',
+	'api_key' => getenv("SENDY_API_KEY")
       ]);
 
       $opts = [ 'http' => [ 'method'  => 'POST', 'header'  => 'Content-type: application/x-www-form-urlencoded', 'content' => $postdata ]];
