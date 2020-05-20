@@ -52,7 +52,8 @@ class SubscribeController extends Controller
       'list' => getenv("SENDY_NEWSLETTER_LIST_ID"),
       'boolean' => 'true',
       'ipaddress' => Craft::$app->request->userIP,
-      'referrer' => 'https://skyclerk.com'
+      'referrer' => 'https://skyclerk.com',
+      'api_key' => getenv("SENDY_API_KEY")
     ]);
 
     $opts = [ 'http' => [ 'method'  => 'POST', 'header'  => 'Content-type: application/x-www-form-urlencoded', 'content' => $postdata ]];
