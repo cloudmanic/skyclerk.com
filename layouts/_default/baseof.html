@@ -1,0 +1,47 @@
+{{- $favicon := resources.Get "images/favicon.ico" -}}
+{{- $style := resources.Get "css/build.css" | minify | fingerprint -}}
+
+<!DOCTYPE html>
+<html lang="en" class="bg-white antialiased">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>{{ .Title }}</title>
+	<meta name="description" content="{{ .Description }}" />
+	<link rel="shortcut icon" type="image/png" href="{{ $favicon.Permalink }}" />
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+	<link rel="stylesheet" href="{{ $style.Permalink }}">
+
+	<!-- open graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{ .Title }}" />
+	<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+	<meta property="og:site_name" content="{{ .Site.Title }}" />
+	<meta property="og:url" content="{{ .Permalink }}" />
+	<meta property="og:locale" content="en">
+
+	{{ if $.Param "og_image" }}
+	<meta property="og:image" content="{{ $.Param "og_image" | absURL  }}" />
+	<meta property="og:image:secure_url" content="{{ $.Param "og_image" | absURL }}" />
+	{{ end }}
+	<meta property="og:type" content="website" />
+
+	<!-- twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	{{ if $.Param "og_image" }}
+	<meta name="twitter:image:src" content="{{ $.Param "og_image" | absURL  }}" />
+	{{ end }}
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+</head>
+
+<body class="text-gray-900 leading-normal">
+
+	<div class="container mx-auto">
+		{{- block "main" . }}{{- end }}
+	</div>
+
+</body>
+
+</html>

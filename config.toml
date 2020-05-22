@@ -1,0 +1,6 @@
+baseURL = "http://skyclerk.com/"
+languageCode = "en-us"
+title = "Skyclerk"
+publishDir = "docs"
+disableHugoGeneratorInject = true
+disableKinds = ["taxonomy", "taxonomyTerm"]

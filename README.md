@@ -2,7 +2,7 @@
 
 Public site for https://skyclerk.com
 
-# How To Build
+# Development Notes
 
 * `npx tailwindcss build assets/css/style.css -o assets/css/build.css`
 

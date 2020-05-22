@@ -1,7 +1,14 @@
+// tailwind.config.js
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: false,
+    content: [
+      './layouts/**/*.html'
+    ],
+  },
+
 
   theme: {
     extend: {

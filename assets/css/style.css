@@ -39,10 +39,23 @@ nav .links .sign-in:focus { @apply outline-none text-indigo-700 }
 .box .body ul li a:focus { @apply outline-none text-gray-700 border-gray-300 }
 
 /* Follow Us Widget */
+.follow-us { @apply my-5 }
 .follow-us .body { @apply flex justify-between }
 .follow-us .icon { @apply text-black }
 .follow-us .icon:hover { @apply text-gray-500 }
 .follow-us svg { @apply h-12 w-12 }
+
+/* Blog */
+.blog .cont { @apply rounded-lg shadow-lg px-10 py-5 border-gray-100 border }
+.blog-body { @apply text-base leading-6 text-gray-500 }
+.blog-body p { @apply py-2 }
+.blog-body ul, .blog-body ol { @apply py-2 ml-10 mr-20 }
+.blog-body ul li, .blog-body ol li { @apply py-2 }
+.blog-body ol { list-style-type: decimal; }
+.blog-body figure { @apply py-2 }
+.blog-body figure img { @apply m-auto; }
+.blog-body a { @apply text-indigo-600 }
+.blog-body a:hover { @apply underline }
 
 @screen sm {
 	.hero { @apply mt-12 px-6 }
@@ -65,6 +78,8 @@ nav .links .sign-in:focus { @apply outline-none text-indigo-700 }
 	.hero .cont { @apply text-left }
 	.hero .cont .sub-title { @apply mx-0 }
 	.hero .cont .cta { @apply justify-start }
+	.blog { @apply flex flex-row flex-wrap }
+	.blog .cont { @apply w-3/4 }
 }
 
 @screen xl {
