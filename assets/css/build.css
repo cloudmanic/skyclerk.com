@@ -954,6 +954,62 @@ nav .links .sign-in:focus { outline: 0; --text-opacity: 1; color: #5145cd; color
 .hero .cont .cta { margin-top: 1.25rem
 }
 
+/* Icons */
+
+.ico-twitter {
+  background-image: url(../images/sprite.png);
+  background-position: 100% 25.217391304347824%;
+  background-size: 775% 560%;
+  width: 24px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 192dpi) {
+  .ico-twitter {
+    background-image: url(../images/sprite.@2x.png);
+    background-position: 100% 25.217391304347824%;
+    background-size: 775% 560%;
+    width: 24px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+  }
+}
+
+.ico-facebook {
+  background-position: 100% 0;
+  background-size: 775% 560%;
+  width: 24px;
+  height: 25px;
+}
+
+.ico-arrow, .ico-arrow-right, .ico-contract, .ico-facebook {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  background-image: url(../images/sprite.png);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 192dpi) {
+  .ico-facebook {
+    background-position: 100% 0;
+    background-size: 775% 560%;
+    width: 24px;
+    height: 25px;
+  }
+
+  .ico-arrow, .ico-arrow-right, .ico-contract, .ico-facebook {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+    background-image: url(../images/sprite.@2x.png);
+  }
+}
+
 @media (min-width: 640px) {
   .hero { margin-top: 3rem; padding-left: 1.5rem; padding-right: 1.5rem
   }
