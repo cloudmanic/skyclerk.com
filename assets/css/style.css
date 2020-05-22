@@ -29,17 +29,13 @@ nav .links .sign-in:focus { @apply outline-none text-indigo-700 }
 .hero .cont .sub-title { @apply mt-3 text-base text-gray-500 }
 .hero .cont .cta { @apply mt-5 }
 
-/* Icons */
-.ico-twitter { background-image: url(../images/sprite.png); background-position: 100% 25.217391304347824%; background-size: 775% 560%; width: 24px; height: 25px; display: inline-block; vertical-align: middle; font-size: 0; }
-.ico-facebook { background-position: 100% 0; background-size: 775% 560%; width: 24px; height: 25px; }
-.ico-arrow, .ico-arrow-right, .ico-contract, .ico-facebook { display: inline-block; vertical-align: middle; font-size: 0; background-image: url(../images/sprite.png); }
-
-@media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 192dpi) {
-	.ico-twitter { background-image: url(../images/sprite.@2x.png); background-position: 100% 25.217391304347824%; background-size: 775% 560%; width: 24px; height: 25px; display: inline-block; vertical-align: middle; font-size: 0; }
-	.ico-facebook { background-position: 100% 0; background-size: 775% 560%; width: 24px; height: 25px; }
-	.ico-arrow, .ico-arrow-right, .ico-contract, .ico-facebook { display: inline-block; vertical-align: middle; font-size: 0; background-image: url(../images/sprite.@2x.png); }
-}
-
+/* Follow Us Widget */
+.follow-us { @apply flex flex-col w-full rounded-lg shadow-lg my-5 }
+.follow-us .header { @apply flex-shrink-0 bg-black text-white text-xl leading-9 font-extrabold text-center py-1 }
+.follow-us .cont { @apply flex justify-between flex-1 px-10 py-5 }
+.follow-us .icon { @apply text-black }
+.follow-us .icon:hover { @apply text-gray-500 }
+.follow-us svg { @apply h-12 w-12 }
 
 @screen sm {
 	.hero { @apply mt-12 px-6 }

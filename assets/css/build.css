@@ -954,60 +954,24 @@ nav .links .sign-in:focus { outline: 0; --text-opacity: 1; color: #5145cd; color
 .hero .cont .cta { margin-top: 1.25rem
 }
 
-/* Icons */
+/* Follow Us Widget */
 
-.ico-twitter {
-  background-image: url(../images/sprite.png);
-  background-position: 100% 25.217391304347824%;
-  background-size: 775% 560%;
-  width: 24px;
-  height: 25px;
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 0;
+.follow-us { display: flex; flex-direction: column; width: 100%; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); margin-top: 1.25rem; margin-bottom: 1.25rem
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 192dpi) {
-  .ico-twitter {
-    background-image: url(../images/sprite.@2x.png);
-    background-position: 100% 25.217391304347824%;
-    background-size: 775% 560%;
-    width: 24px;
-    height: 25px;
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 0;
-  }
+.follow-us .header { flex-shrink: 0; --bg-opacity: 1; background-color: #000000; background-color: rgba(0, 0, 0, var(--bg-opacity)); --text-opacity: 1; color: #ffffff; color: rgba(255, 255, 255, var(--text-opacity)); font-size: 1.25rem; line-height: 2.25rem; font-weight: 800; text-align: center; padding-top: 0.25rem; padding-bottom: 0.25rem
 }
 
-.ico-facebook {
-  background-position: 100% 0;
-  background-size: 775% 560%;
-  width: 24px;
-  height: 25px;
+.follow-us .cont { display: flex; justify-content: space-between; flex: 1 1 0%; padding-left: 2.5rem; padding-right: 2.5rem; padding-top: 1.25rem; padding-bottom: 1.25rem
 }
 
-.ico-arrow, .ico-arrow-right, .ico-contract, .ico-facebook {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 0;
-  background-image: url(../images/sprite.png);
+.follow-us .icon { --text-opacity: 1; color: #000000; color: rgba(0, 0, 0, var(--text-opacity))
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 192dpi) {
-  .ico-facebook {
-    background-position: 100% 0;
-    background-size: 775% 560%;
-    width: 24px;
-    height: 25px;
-  }
+.follow-us .icon:hover { --text-opacity: 1; color: #6b7280; color: rgba(107, 114, 128, var(--text-opacity))
+}
 
-  .ico-arrow, .ico-arrow-right, .ico-contract, .ico-facebook {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 0;
-    background-image: url(../images/sprite.@2x.png);
-  }
+.follow-us svg { height: 3rem; width: 3rem
 }
 
 @media (min-width: 640px) {
