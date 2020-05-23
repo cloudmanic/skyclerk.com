@@ -33,6 +33,34 @@
 					</div>
 
 					{{- partial "blog/must-reads.html" . -}}
+
+
+
+					<div class="article__comments">
+						<div id="disqus_thread"></div>
+						<script>
+							var disqus_config = function() {
+								this.page.url = "{{- .Title | urlize -}}";
+								this.page.identifier = "{{- .Title | urlize -}}";
+							};
+							(function() {
+								// DON'T EDIT BELOW THIS LINE
+								var d = document,
+									s = d.createElement("script");
+								s.src = "https://skyclerk.disqus.com/embed.js";
+								s.setAttribute("data-timestamp", +new Date());
+								(d.head || d.body).appendChild(s);
+							})();
+
+						</script>
+						<noscript>
+							Please enable JavaScript to view the
+							<a href="https://disqus.com/?ref_noscript">
+								comments powered by Disqus.
+							</a>
+						</noscript>
+					</div>
+
 				</div>
 
 				<div class="w-1/4 px-10">
