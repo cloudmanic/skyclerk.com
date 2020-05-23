@@ -1,5 +1,72 @@
 {{ define "main" }}
 
-asdf
+<div class="min-h-screen bg-white">
+	{{- partial "main-nav.html" . -}}
+
+	<div class="py-10">
+
+		<main>
+
+			<div class="blog">
+
+				<div class="cont">
+
+					<h1 class="text-2xl py-5 leading-7 font-semibold text-gray-900">{{ .Title }}</h1>
+
+					<div class="flex flex-row justify-between pb-6">
+
+						<div class="flex items-center">
+							<div class="flex-shrink-0">
+								<a href="#">
+									<img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+								</a>
+							</div>
+
+							<div class="ml-3">
+								<p class="text-sm leading-5 font-medium text-gray-900">
+									<a href="#" class="hover:underline">
+										Roel Aufderhar
+									</a>
+								</p>
+
+								<div class="flex text-sm leading-5 text-gray-500">
+									<time datetime="2020-03-16">
+										Mar 16, 2020
+									</time>
+								</div>
+							</div>
+						</div>
+
+						<p class="text-sm leading-5 font-medium text-gray-300 mr-40">
+							<a href="#" class="hover:underline">
+								Blog Category
+							</a>
+						</p>
+
+					</div>
+
+					<div class="blog-body">
+						{{ .Content }}
+					</div>
+
+				</div>
+
+				<div class="w-1/4 px-10">
+					{{- partial "blog/categories.html" . -}}
+					{{- partial "blog/ad.html" . -}}
+					{{- partial "blog/follow-us.html" . -}}
+				</div>
+
+			</div>
+
+		</main>
+
+	</div>
+</div>
+
+
+{{- partial "footer-signup.html" . -}}
+{{- partial "footer.html" . -}}
+
 
 {{ end }}
