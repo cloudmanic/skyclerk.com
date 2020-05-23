@@ -3,4 +3,7 @@ languageCode = "en-us"
 title = "Skyclerk"
 publishDir = "docs"
 disableHugoGeneratorInject = true
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomyTerm"]
+
+[permalinks]
+	categories = "/blog/:slug/"

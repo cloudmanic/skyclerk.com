@@ -37,11 +37,13 @@
 							</div>
 						</div>
 
+						{{ if .Params.categories }}
 						<p class="text-sm leading-5 font-medium text-gray-300 mr-40">
-							<a href="#" class="hover:underline">
-								Blog Category
-							</a>
+							{{- range .Params.categories -}}
+							<a class="hover:underline" href="{{- "/blog/" | relLangURL -}}{{- . | urlize -}}">{{- . -}}</a>
+							{{- end -}}
 						</p>
+						{{end}}
 
 					</div>
 
