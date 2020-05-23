@@ -104,7 +104,7 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 	.hero .cont .sub-title { @apply mx-0 }
 	.hero .cont .cta { @apply justify-start }
 	.blog { @apply flex flex-row flex-wrap }
-	.blog .cont { @apply w-3/4 }
+	.blog .cont { @apply w-2/3 }
 	.support-landing { @apply grid-cols-3 max-w-none }
 }
 

@@ -1136,7 +1136,7 @@ nav .main-links .sign-in:focus { outline: 0; --text-opacity: 1; color: #5145cd; 
   .blog { display: flex; flex-direction: row; flex-wrap: wrap
   }
 
-  .blog .cont { width: 75%
+  .blog .cont { width: 66.666667%
   }
 
   .support-landing { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none
