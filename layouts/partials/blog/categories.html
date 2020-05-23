@@ -4,26 +4,18 @@
 	</div>
 
 	<div class="body">
+
 		<ul>
 			<li>
 				<a href="/blog">All Posts</a>
 			</li>
 
-			<li>
-				<a href="https://skyclerk.com/blog/company-news">CompanyNews</a>
+			{{ range $key, $value := .Site.Taxonomies.categories }}
+			<li class="capitalize">
+				<a href="/blog/{{ $key | urlize }}">{{ $key | humanize }} ({{ len $value }})</a>
 			</li>
+			{{ end }}
 
-			<li>
-				<a href="https://skyclerk.com/blog/accounting-bookkeeping">Accounting &amp; Bookkeeping</a>
-			</li>
-
-			<li>
-				<a href="https://skyclerk.com/blog/product-updates">Product Updates</a>
-			</li>
-
-			<li>
-				<a href="https://skyclerk.com/blog/business-ideas">Business Ideas</a>
-			</li>
 		</ul>
 	</div>
 </div>

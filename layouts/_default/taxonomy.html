@@ -1,29 +1,35 @@
 {{ define "main" }}
 
 <div class="min-h-screen bg-white">
+	{{- partial "main-nav.html" . -}}
 
-	HERE
+	<div class="py-10">
 
-	{{ .Kind }}
+		<main>
 
-	{{ range .Pages }}
-	<div style="border: 1px solid black; margin:10px; padding:10px; ">
-		<div style="font-size:20px;">
-			<a href="{{.URL}}">{{.Title}}</a>
-		</div>
-		<div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
-		<div style="color:grey; font-size:16px;">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
-		<div style="color:grey; font-size:16px;">{{ if .Params.categories }}<strong>Categories:</strong> {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+			<div class="relative pt-5 pb-20 px-4 sm:px-6 lg:pt-5 lg:pb-28 lg:px-8">
 
-		<p style="font-size:18px;">{{.Summary}}</p>
+				<div class="relative max-w-7xl mx-auto">
+					<div class="text-center">
+						<h2 class="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
+							{{ .Title }}
+						</h2>
+					</div>
+
+					<div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+						{{- partial "blog/list.html" . -}}
+					</div>
+				</div>
+
+			</div>
+
+		</main>
+
 	</div>
-	{{ end }}
-
 </div>
 
 
 {{- partial "footer-signup.html" . -}}
 {{- partial "footer.html" . -}}
-
 
 {{ end }}
