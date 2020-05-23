@@ -1083,7 +1083,7 @@ nav .main-links .sign-in:focus { outline: 0; --text-opacity: 1; color: #5145cd; 
 
 /* Support */
 
-.support-landing { display: flex; flex-direction: row; margin-top: 3rem; display: grid; grid-gap: 1.25rem; gap: 1.25rem; max-width: 32rem; margin-left: auto; margin-right: auto
+.support-landing { display: flex; flex-direction: row; margin-top: 3.75rem; display: grid; grid-gap: 1.25rem; gap: 1.25rem; max-width: 32rem; margin-left: auto; margin-right: auto
 }
 
 @media (min-width: 640px) {

@@ -80,7 +80,7 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 .related-posts ul li a:hover { @apply underline }
 
 /* Support */
-.support-landing { @apply flex flex-row mt-12 grid gap-5 max-w-lg mx-auto }
+.support-landing { @apply flex flex-row mt-15 grid gap-5 max-w-lg mx-auto }
 
 @screen sm {
 	.hero { @apply mt-12 px-6 }

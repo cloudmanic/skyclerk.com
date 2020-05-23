@@ -1,0 +1,36 @@
+---
+title: "Can I pay With PayPal?"
+date: 2020-05-15T20:19:58-07:00
+draft: false
+author: "spicer-matthews"
+supportCategories: ["Billing, Access, Settings"]
+description: "Skyclerk accepts payments with PayPal as well. On this post you will learn how."
+og_image: "/images/marketing/skyclerk-share.png"
+---
+
+<p>You can pay yearly with PayPal. Afraid we do not provide an option for monthly billing. In order to pay with PayPal simply click one of the buttons below. Please use the email address associated with your Skyclerk account. If you end up using a
+	different one please email us at <a href="mailto:help@skyclerk.com">help@skyclerk.com</a> and let us know you did. </p>
+<p>PayPal payments can take 24 hours to go through. If you are currently locked out of your account for non-payment please email <a href="mailto:help@skyclerk.com">help@skyclerk.com</a> and we can manually let you back in. </p>
+
+<div id="paypal-button-container"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=Aeyg-71jVsEMFXzHGVGsbDv1mmSKHdz-D87POhbX1jb_DlhI-9VzyUo9U8-Klks9NVpWrO-xsj_Lr56c&vault=true" data-sdk-integration-source="button-factory"></script>
+<script>
+	paypal.Buttons({
+		style: {
+			shape: 'pill',
+			color: 'blue',
+			layout: 'horizontal',
+			label: 'subscribe',
+
+		},
+		createSubscription: function(data, actions) {
+			return actions.subscription.create({
+				'plan_id': 'P-9BS01352XH588293LL27OWHQ'
+			});
+		},
+		onApprove: function(data, actions) {
+			alert("Thanks for subscribing to Skyclerk. Your account will be activated within the next 24 hours. Please email help@skyclerk.com if you would like your account activated sooner.");
+		}
+	}).render('#paypal-button-container');
+
+</script>

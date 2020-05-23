@@ -6,5 +6,9 @@ disableHugoGeneratorInject = true
 disableKinds = ["taxonomyTerm"]
 summaryLength = 20
 
+[taxonomies]
+  category = "categories"
+  supportCategory = "supportCategories"
+
 [permalinks]
 	categories = "/blog/:slug/"
