@@ -1,0 +1,80 @@
+<div class="shell">
+	<!-- {% if category is defined %}
+	<header class="section__head">
+		<h2>{{ category.title }}</h2>
+	</header>
+	{% endif %}
+
+	{% if query is not empty %}
+	<header class="section__head">
+		<h2>Search: {{ query }}</h2>
+	</header>
+	{% endif %}
+
+	{% if tag is defined %}
+	<header class="section__head">
+		<h2>Related To: {{ tag.title }}</h2>
+	</header>
+	{% endif %} -->
+
+	<div class="cols">
+		<div class="col col--size1">
+			<div class="section__content">
+
+				{% if entries|length %}
+				{% for row in entries %}
+				<div class="article-link">
+					<div class="article__body">
+						<div class="article__image">
+							<a href="{{ row.url }}">
+								<figure style="background-image: url({{ row.blogImage.one().url('crop800x800') }});"></figure>
+							</a>
+						</div>
+
+						<div class="article__content">
+							<h4>{{ row.title }}</h4>
+
+							<h6>
+								{{ row.blogCategory.one().title }}
+								<span class="separator">|</span>
+								{{ row.postDate|date("F d, Y") }}
+							</h6>
+
+							<p>{{ row.blogExcerpt }}</p>
+
+							<a href="{{ row.url }}" class="btn btn--transparent btn--block">
+								Read Full Article
+							</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				{% else %}
+				<p>Your search for "{{ query }}" didn’t return any results.</p>
+				{% endif %}
+
+				<div class="paging">
+					{% if pageInfo.prevUrl %}
+					<a href="{{ pageInfo.prevUrl }}" class="paging__prev">
+						<i class="ico-arrow"></i>
+						Prev Posts
+					</a>
+					{% else %}
+					&nbsp;
+					{% endif %}
+
+					{% if pageInfo.nextUrl %}
+					<a href="{{ pageInfo.nextUrl }}" class="paging__next">
+						Next Posts
+						<i class="ico-arrow-right"></i>
+					</a>
+					{% endif %}
+				</div>
+
+			</div>
+		</div>
+
+		{% include "blog/_modules/blogSideBar" %}
+
+	</div>
+</div>

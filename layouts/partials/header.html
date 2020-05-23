@@ -1,0 +1,45 @@
+<header class="header">
+	<div class="shell shell--fluid">
+		<div class="header__content">
+			<a href="{{ .Site.BaseURL }}" class="logo">Skyclerk</a>
+
+			<a href="#" class="btn-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+
+			<div class="header__nav">
+				<nav class="nav">
+					<ul>
+						<li class="current">
+							<a href="{{ "" | absURL }}">Home</a>
+						</li>
+
+						<li class="">
+							<a href="{{ "/blog" | absURL }}">Blog</a>
+						</li>
+
+						<li class="">
+							<a href="{{ "/support" | absURL }}">Support</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="header__actions">
+					<nav class="nav">
+						<ul>
+							<li>
+								<a href="{{ $.Site.Params.appLoginUrl }}">Login</a>
+							</li>
+						</ul>
+					</nav>
+
+					<a href="{{ $.Site.Params.appRegisterUrl }}" class="btn">
+						{{ $.Site.Params.trialDays }} Day Free Trial
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

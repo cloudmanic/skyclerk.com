@@ -1,0 +1,430 @@
+{{ define "main" }}
+
+<div class="main">
+	<div class="intro intro--home">
+		<div class="intro__image hidden-xs" style="background-image: url({{ "/images/temp/intro-image-1.jpg" | absURL }});"></div><!-- /.intro__image -->
+
+		<div class="intro__image hidden-sm hidden-md hidden-lg" style="background-image: url({{ "/images/temp/intro-image-mobile.jpg" | absURL }});"></div><!-- /.intro__image -->
+
+		<div class="intro__body">
+			<div class="shell">
+				<div class="intro__inner">
+					<div class="intro__content">
+						<a href="{{ "" | absURL }}" class="logo logo--intro"></a>
+
+						<h3>Making bookkeeping a breeze!</h3>
+
+						<a href="http://www.youtube.com/embed/ahQgNssTNrs?rel=0&amp;wmode=transparent" class="btn-more youtube">
+							<svg version="1.1" id="play_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+								<style type="text/css">
+									.st0-play {
+										fill: #fff;
+									}
+
+								</style>
+								<g>
+									<g id="play-circle-outline">
+										<path class="st0-play" d="M204,369.8L357,255L204,140.2V369.8z M255,0C114.8,0,0,114.8,0,255s114.8,255,255,255s255-114.8,255-255
+										S395.2,0,255,0z M255,459c-112.2,0-204-91.8-204-204S142.8,51,255,51s204,91.8,204,204S367.2,459,255,459z"></path>
+									</g>
+								</g>
+							</svg>
+
+							See How It Works
+						</a>
+
+						<div class="intro__actions">
+							<div class="subscribe">
+								{{ $header := "h4" }}
+								{{- partial "signup.html" (dict "header" $header "Site" $.Site) -}}
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="section section--services">
+		<div class="shell">
+			<div class="partners">
+				<div class="partners__aside">
+					<h5>Featured In:</h5>
+				</div>
+
+				<div class="partners__content">
+					<ul class="list-partners">
+						<li class="has-tooltip">
+							<a href="{{ "" | absURL }}" class="logo-p-silicon">
+								<img src="{{ "/images/temp/partner-1.png" | absURL }}" alt="" width="164" height="49">
+
+								<div class="tooltip">
+									<p>“Wow. Your life just got easier!”</p>
+								</div>
+							</a>
+						</li>
+
+						<li class="has-tooltip">
+							<a href="{{ "" | absURL }}" class="logo-p-tnw">
+								<img src="{{ "/images/temp/partner-2.png" | absURL }}" alt="" width="76" height="18">
+
+								<div class="tooltip">
+									<p>“Wow. Your life just got easier!”</p>
+								</div>
+							</a>
+						</li>
+
+						<li class="has-tooltip">
+							<a href="{{ "" | absURL }}" class="logo-p-tripwire">
+								<img src="{{ "/images/temp/partner-3.png" | absURL }}" alt="" width="71" height="29">
+
+								<div class="tooltip">
+									<p>“Wow. Your life just got easier!”</p>
+								</div>
+							</a>
+						</li>
+
+						<li class="has-tooltip">
+							<a href="{{ "" | absURL }}" class="logo-p-design">
+								<img src="{{ "/images/temp/partner-4.png" | absURL }}" alt="" width="98" height="25">
+
+								<div class="tooltip">
+									<p>“Wow. Your life just got easier!”</p>
+								</div>
+							</a>
+						</li>
+
+						<li class="has-tooltip">
+							<a href="{{ "" | absURL }}" class="logo-p-abduzeedo">
+								<img src="{{ "/images/temp/partner-5.png" | absURL }}" alt="" width="144" height="24">
+
+								<div class="tooltip">
+									<p>“Wow. Your life just got easier!”</p>
+								</div>
+							</a>
+						</li>
+
+						<li class="has-tooltip">
+							<a href="{{ "" | absURL }}" class="logo-p-dzone">
+								<img src="{{ "/images/temp/partner-6.png" | absURL }}" alt="" width="48" height="49">
+
+								<div class="tooltip">
+									<p>“Wow. Your life just got easier!”</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<header class="section__head">
+				<h1 class="section__title">Saves You From the Hassle of Bookkeeping while Keeping You Stay on Track.</h1>
+			</header>
+
+			<div class="section__body">
+				<div class="service service--size2 service--image-size2">
+					<div class="service__body">
+						<div class="service__content">
+							<div class="service__entry">
+								<h2>Real Time Dashboard</h2>
+
+								<p>Upon login, all you need is one quick glance to know how well your business is doing.</p>
+
+								<a href="{{ $.Site.Params.appRegisterUrl }}" class="btn btn--size2">
+									Try It for Free!
+								</a>
+							</div>
+						</div>
+
+						<div class="service__image service__image--top-xs">
+							<img src="{{ "/images/temp/service-image-1.png" | absURL }}" alt="" width="551" height="370">
+						</div>
+					</div>
+				</div>
+
+				<div class="service service--size2 service--image-right">
+					<div class="service__body">
+						<div class="service__content">
+							<div class="service__entry">
+								<h2>Income &amp; Expense Tracking</h2>
+
+								<p>Keep track of who has paid and who still owes you some cash flow. Edit ledger items right from your ledger page.</p>
+
+								<p>As a bonus, we’ve added a handy Note tab for each ledger entry.</p>
+
+								<a href="{{ $.Site.Params.appRegisterUrl }}" class="btn btn--size2">
+									See It for Yourself
+								</a>
+							</div>
+						</div>
+
+						<div class="service__image">
+							<img src="{{ "/images/temp/service-image-2.png" | absURL }}" alt="" width="526" height="416">
+						</div>
+					</div>
+				</div>
+
+				<div class="callout-centered">
+					<div class="callout__body">
+						<div class="callout__head">
+							<div class="callout__image">
+								<img src="{{ "/images/temp/callout-centered-image.png" | absURL }}" alt="" width="570" height="443">
+							</div>
+
+							<div class="callout__info">
+								<p>
+									<strong>You</strong> upload your receipts
+								</p>
+
+								<p>
+									<strong>We</strong> analyze and organize for you
+								</p>
+
+								<p>
+									<strong>You</strong> live your life
+								</p>
+							</div>
+						</div>
+
+						<div class="callout__content">
+							<div class="callout__entry">
+								<h2>Go Paperless with Snap!Clerk</h2>
+
+								<p>Our number 1 goal is to help businesses go paperless.</p>
+
+								<ul class="list-buttons list-buttons--apps">
+									<li>
+										<a href="{{ $.Site.Params.appStoreAppleUrl }}" class="btn btn--app btn--app-store" style="background-image: url({{ "/images/temp/app-store.png" | absURL }});">
+											App Store
+										</a>
+									</li>
+
+									<li>
+										<a href="{{ $.Site.Params.appStoreAndroidUrl }}" class="btn btn--app" style="background-image: url({{ "/images/temp/google-play.png" | absURL }});">
+											Google Play
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="service service--size3 service--image-right">
+					<div class="service__body">
+						<div class="service__content">
+							<div class="service__entry">
+								<h2>Custom Reports</h2>
+
+								<p>The ability to generate graphs of your entire financials with just a few clicks is priceless.</p>
+
+								<p>That’s why we’ve dedicated an entire section to </p>
+
+								<a href="{{ $.Site.Params.appRegisterUrl }}" class="btn btn--size2">
+									Try It Out
+								</a>
+							</div>
+						</div>
+
+						<div class="service__image">
+							<img src="{{ "/images/temp/service-image-3.png" | absURL }}" alt="" width="470" height="310">
+						</div>
+					</div>
+				</div>
+
+				<div class="service service--size4">
+					<div class="service__body">
+						<div class="service__content">
+							<div class="service__entry">
+								<h2>Invoices Coming Soon!</h2>
+
+								<p>It’s true! Soon enough you’ll be billing your clients right from Skyclerk.</p>
+
+								<p>
+									We’re stoked about it.
+
+									<br>And we hope you are, too.
+								</p>
+							</div>
+						</div>
+
+						<div class="service__image service__image--top-xs">
+							<img src="{{ "/images/temp/service-image-4.png" | absURL }}" alt="" width="475" height="548">
+						</div>
+					</div>
+				</div>
+
+				<ul class="list-services">
+					<li>
+						<figure>
+							<i class="ico-shield"></i>
+						</figure>
+
+						<h2>Secure Transaction</h2>
+
+						<p>Secure transactions worth Millions. Our users trust us with their sensitive information because we’re secure and we back up.</p>
+					</li>
+
+					<li>
+						<figure>
+							<i class="ico-contract"></i>
+						</figure>
+
+						<h2>No Contracts</h2>
+
+						<p>Pay as you go and cancel any time.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<div class="callout-stats">
+		<div class="shell">
+			<div class="callout__head">
+				<h1>Get the Same Benefits from Other Services for a Reasonable Price.</h1>
+			</div>
+
+			<div class="callout__body">
+				<div class="service-stats">
+					<div class="service__head">
+						<div class="service__inner">
+							<div class="service__content">
+								<p>Platform</p>
+							</div>
+
+							<div class="service__aside">
+								<p>Cost/Year</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="service__body">
+						<div class="service__entry active">
+							<div class="service__inner">
+								<div class="service__content">
+									<figure>
+										<i class="ico-skyclerk"></i>
+									</figure>
+								</div>
+
+								<div class="service__aside">
+									<p>
+										${{ $.Site.Params.priceYear }} / year
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="service__entry service__entry--size2">
+							<div class="service__inner">
+								<div class="service__content">
+									<figure>
+										<i class="ico-quickbooks"></i>
+									</figure>
+								</div>
+
+								<div class="service__aside">
+									<p>
+										$240 / year
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="service__entry">
+							<div class="service__inner">
+								<div class="service__content">
+									<figure>
+										<i class="ico-xero"></i>
+									</figure>
+								</div>
+
+								<div class="service__aside">
+									<p>
+										$360 / year
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="service__entry service__entry--size2">
+							<div class="service__inner">
+								<div class="service__content">
+									<figure>
+										<i class="ico-less-accounting"></i>
+									</figure>
+								</div>
+
+								<div class="service__aside">
+									<p>
+										$240 / year
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="callout__actions">
+				<a href="{{ $.Site.Params.appRegisterUrl }}" class="btn btn--size3">
+					Try for {{ $.Site.Params.trialDays }} Days Free
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="callout callout--apps">
+		<div class="shell">
+			<div class="service service--apps service--image-right">
+				<div class="service__body">
+					<div class="service__content">
+						<div class="service__entry">
+							<h2>We’re in Your Pocket too!</h2>
+
+							<p>Now for iPhone and Android. No more shoebox full of receipts - take a photo and upload to your ledger on the fly. Pretty awesome, huh?</p>
+
+							<ul class="list-buttons list-buttons--apps">
+								<li>
+									<a href="" class="btn btn--app btn--app-store" style="background-image: url({{ "/images/temp/app-store.png" | absURL }});">
+										App Store
+									</a>
+								</li>
+
+								<li>
+									<a href="" class="btn btn--app" style="background-image: url({{ "/images/temp/google-play.png" | absURL }});">
+										Google Play
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="service__image">
+						<img src="{{ "/images/temp/callout-image-1.png" | absURL }}" alt="" width="298" height="408" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="callout callout--get-started" style="background-image: url({{ "/images/temp/callout-image-2.jpg" | absURL }});">
+		<div class="shell">
+			<div class="callout__body">
+				<div class="callout__content">
+					<div class="subscribe subscribe--callout">
+						{{ $header := "h2" }}
+						{{- partial "signup.html" (dict "header" $header "Site" $.Site) -}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{- partial "newsletter.html" . -}}
+</div>
+
+{{ end }}

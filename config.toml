@@ -1,0 +1,30 @@
+baseURL = "https://skyclerk.com/"
+languageCode = "en-us"
+publishDir = "docs"
+title = "Skyclerk"
+disableHugoGeneratorInject = true
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+	# App Stuff
+	appLoginUrl="https://skyclerk.cloudmanic.com"
+	appRegisterUrl="https://accounts.cloudmanic.com/register/skyclerk?redirect=http://skyclerk.cloudmanic.com&plan=SKYCLERK-BASIC-0.00-03-24-2013&email="
+
+	# Pricing
+	trialDays=15
+	priceYear=60
+	priceMonth=6
+
+	# Social Stuff
+	twitterUrl="https://twitter.com/skyclerk"
+	facebookUrl="https://www.facebook.com/skyclerk"
+
+	# Newslettter stuff
+	SENDY_SIGNUP_LIST_ID="IdtXv17OQ3EaBZLLYIoMWA"
+	SENDY_NEWSLETTER_LIST_ID="7OKb7634ZXvWBFyDvQVT892l0g"
+	SENDY_URL="https://sendy.cloudmanic.com"
+
+
+	# App Stores Urls
+	appStoreAppleUrl="https://apps.apple.com/us/app/skyclerk-bookkeeping-and-accounting/id483718116"
+	appStoreAndroidUrl="https://play.google.com/store/apps/details?id=com.cloudmanic.skyclerk"
