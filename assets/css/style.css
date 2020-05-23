@@ -2,6 +2,11 @@
 
 @tailwind components;
 
+/* Colors */
+.color-primary-bg { @apply border-indigo-600 }
+.color-primary-text { @apply text-indigo-600 }
+.color-primary-border { @apply border-indigo-600 }
+
 
 /* Buttons */
 .btn { @apply items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 transition duration-150 ease-in-out }
@@ -55,15 +60,24 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 
 /* Blog */
 .blog .cont { @apply rounded-lg shadow-lg px-10 py-5 border-gray-100 border }
-.blog-body { @apply text-base leading-6 text-gray-500 }
-.blog-body p { @apply py-2 }
+.blog-body { @apply text-base leading-7 text-gray-500 }
+.blog-body p { @apply py-2 text-base leading-loose }
 .blog-body ul, .blog-body ol { @apply py-2 ml-10 mr-20 }
 .blog-body ul li, .blog-body ol li { @apply py-2 }
 .blog-body ol { list-style-type: decimal; }
+.blog-body ul { list-style-type: disc; }
 .blog-body figure { @apply py-2 }
 .blog-body figure img { @apply m-auto; }
-.blog-body a { @apply text-indigo-600 }
+.blog-body a { @apply color-primary-text }
 .blog-body a:hover { @apply underline }
+.blog-body h2 { @apply text-2xl py-4 leading-7 font-semibold text-gray-900 }
+.blog-body blockquote { @apply relative p-5 py-10 mt-6 mb-5 text-2xl italic border-l-4 color-primary-border }
+
+/* Related Posts */
+.related-posts h3 { @apply text-xl py-4 leading-7 font-semibold text-gray-900 }
+.related-posts ul { list-style-type: none; }
+.related-posts ul li { @apply pl-8 py-2 color-primary-text }
+.related-posts ul li a:hover { @apply underline }
 
 @screen sm {
 	.hero { @apply mt-12 px-6 }

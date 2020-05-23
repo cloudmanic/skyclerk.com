@@ -1,0 +1,12 @@
+{{ if .Params.must_reads }}
+<div class="related-posts">
+	<h3 class="">Enjoyed this post? Here are some must reads.</h3>
+	<ul>
+		{{ range $row := .Params.must_reads }}
+		<li>
+			<a href="{{ $row }}">{{ with $.Site.GetPage $row }}{{ .Title }}{{ end }}</a>
+		</li>
+		{{end}}
+	</ul>
+</div>
+{{end}}
