@@ -4,6 +4,7 @@ title = "Skyclerk"
 publishDir = "docs"
 disableHugoGeneratorInject = true
 disableKinds = ["taxonomyTerm"]
+summaryLength = 20
 
 [permalinks]
 	categories = "/blog/:slug/"
