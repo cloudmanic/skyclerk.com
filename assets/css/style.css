@@ -79,6 +79,9 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 .related-posts ul li { @apply pl-8 py-2 color-primary-text }
 .related-posts ul li a:hover { @apply underline }
 
+/* Support */
+.support-landing { @apply flex flex-row mt-12 grid gap-5 max-w-lg mx-auto }
+
 @screen sm {
 	.hero { @apply mt-12 px-6 }
 	.hero .cont { @apply text-center }
@@ -102,6 +105,7 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 	.hero .cont .cta { @apply justify-start }
 	.blog { @apply flex flex-row flex-wrap }
 	.blog .cont { @apply w-3/4 }
+	.support-landing { @apply grid-cols-3 max-w-none }
 }
 
 @screen xl {

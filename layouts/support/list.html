@@ -1,0 +1,114 @@
+{{ define "main" }}
+
+<div class="min-h-screen bg-white">
+	{{- partial "main-nav.html" . -}}
+
+	<div class="py-10">
+
+		<main>
+
+			<div class="flex flex-row">
+				<h1>What can We Help You with Today?</h1>
+				<a href="" class="btn">Contact Us</a>
+			</div>
+
+			<div>
+				<div class="mt-1 relative rounded-md shadow-sm">
+					<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+						<svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+							<path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" /></svg>
+					</div>
+					<input id="question" class="form-input h-15 block w-full pl-10 sm:text-lg sm:leading-5" placeholder="Enter a question, keyword, or topic" />
+				</div>
+			</div>
+
+
+			<div class="support-landing">
+
+				<div class="box flex-col">
+					<div class="header">
+						<h2 class="header">Billing, Access, Settings</h2>
+					</div>
+
+					<div class="body">
+						<ul>
+							<li>
+								<a href="">Can I pay With PayPal?</a>
+							</li>
+
+							<li>
+								<a href="">How do I log in to my Skyclerk account?</a>
+							</li>
+
+							<li>
+								<a href="">How do I cancel my Skyclerk account?</a>
+							</li>
+
+							<li>
+								<a href="">How can I pay for Skyclerk?</a>
+							</li>
+
+							<li>
+								<a href="">Does Skyclerk work on my Mac?</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+
+				<div class="box flex-col">
+					<div class="header">
+						<h2 class="header">Billing, Access, Settings</h2>
+					</div>
+
+					<div class="body">
+						<ul>
+							<li>
+								<a href="">Can I pay With PayPal?</a>
+							</li>
+
+							<li>
+								<a href="">How do I log in to my Skyclerk account?</a>
+							</li>
+
+							<li>
+								<a href="">How do I cancel my Skyclerk account?</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="box flex-col">
+					<div class="header">
+						<h2 class="header">Billing, Access, Settings</h2>
+					</div>
+
+					<div class="body">
+						<ul>
+							<li>
+								<a href="">Can I pay With PayPal?</a>
+							</li>
+
+							<li>
+								<a href="">How do I log in to my Skyclerk account?</a>
+							</li>
+
+							<li>
+								<a href="">How do I cancel my Skyclerk account?</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+		</main>
+
+	</div>
+</div>
+
+
+{{- partial "footer-signup.html" . -}}
+{{- partial "footer.html" . -}}
+
+{{ end }}
