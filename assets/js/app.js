@@ -31,6 +31,16 @@ var app = new Vue({
 
     // Show mobile menu or not
 		showMobileMenu: false,
+
+    // Contact Form fields.
+    contactSuccess: "",
+    contactEmail: "",
+    contactPhone: "",
+    contactMessage: "",
+    contactFullName: "",
+    contactEmailError: "",
+    contactMessageError: "",
+    contactFullNameError: ""
 	},
 
 	methods: {
@@ -87,6 +97,59 @@ var app = new Vue({
 		// Mobile menu open
     mobileMenuToggle: function () {
 			this.showMobileMenu = !this.showMobileMenu;
+    },
+
+    // Do contact form submit
+    doContactSubmit: function() {
+      var that = this;
+
+      // Clear error
+      this.contactEmailError = "";
+      this.contactMessageError = "";
+      this.contactFullNameError = "";
+
+      // valdiate email.
+      if(this.contactEmail.length <= 2) {
+        this.contactEmailError = "Valid email address is required.";
+      }
+
+      // valdiate name.
+      if(this.contactFullName.length < 2) {
+        this.contactFullNameError = "Valid full name is required.";
+      }
+
+      // valdiate message.
+      if(this.contactMessage.length < 2) {
+        this.contactMessageError = "Valid message is required.";
+      }
+
+      // Do we have any errors?
+      if(this.contactEmailError || this.contactFullNameError || this.contactMessageError) {
+        return;
+      }
+
+      // Send request to the app server
+      axios.post('https://app.skyclerk.com/support/contact-us', {
+          fullName: this.contactFullName,
+          email: this.contactEmail,
+          phone: this.contactPhone,
+          message: this.contactMessage
+        })
+        .then(function (response) {
+          // Success
+          if(response.status == 204) {
+            that.contactSuccess = "Thank you for submitting your contact request. We will get back to you very shorty.";
+            that.contactEmail = "";
+            that.contactPhone = "";
+            that.contactMessage = "";
+            that.contactFullName = "";
+          } else {
+            alert("Something went wrong. Maybe try to email help@skyclerk.com instead.");
+          }
+        })
+        .catch(function (error) {
+          alert("Something went wrong. Maybe try to email help@skyclerk.com instead.");
+        });
     }
   },
 
