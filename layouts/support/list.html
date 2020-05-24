@@ -18,8 +18,20 @@
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
 							<path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" /></svg>
 					</div>
-					<div id="searchbox"></div>
-					<div id="hits" class="search-results"></div>
+
+					<form @submit="doSearch">
+						<input type="text" placeholder="Enter a question, keyword, or topic" v-model="searchTerm" v-on:keyup="doSearch" />
+					</form>
+				</div>
+
+				<div class="search-results">
+					<ol>
+						<li v-for="row in searchResults">
+							<a v-bind:href="row.item.permalink">
+								{{"{{"}} row.item.title {{"}}"}}
+							</a>
+						</li>
+					</ol>
 				</div>
 			</div>
 

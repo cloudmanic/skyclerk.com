@@ -4,66 +4,81 @@ var app = new Vue({
   el: '#app',
 
 	data: {
-		showMobileMenu: false
+    // Search term
+    searchTerm: "",
+
+    // Stores full site index.
+    siteIndex: [],
+
+    // Stores search results.
+    searchResults: [],
+
+    // Show mobile menu or not
+		showMobileMenu: false,
 	},
 
 	methods: {
+    // Load site index.
+    loadSiteIndex: function () {
+      let that = this;
+
+      // Only need to load this once.
+      if(that.searchResults.length > 0) {
+        return;
+      }
+
+      // Make AJAX call to get data.
+      axios.get('index.json')
+        .then(function (response) {
+          that.siteIndex = response.data;
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
+    },
+
+    // Search
+    doSearch: function (e) {
+      let that = this;
+
+      // Search options.
+      var options = {
+        shouldSort: true,
+        includeMatches: true,
+        threshold: 0.4,
+        tokenize: true,
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        minMatchCharLength: 1,
+        keys: [
+          {name:"title", weight:0.8},
+          {name:"contents", weight:0.5},
+          {name:"tags", weight:0.3},
+          {name:"categories", weight:0.3}
+        ]
+      }
+
+      // Do Search.
+      var fuse = new Fuse(that.siteIndex, options);
+      var results = fuse.search(this.searchTerm);
+      that.searchResults = results;
+
+      e.preventDefault();
+    },
+
 		// Mobile menu open
     mobileMenuToggle: function () {
 			this.showMobileMenu = !this.showMobileMenu;
     }
+  },
+
+  // Called when this fires up.
+  created: function() {
+    // Some day make it so we only load this if we need it.
+    this.loadSiteIndex();
   }
 });
-
-// Setup search stuff.
-if(document.querySelector('#searchbox'))
-{
-  const search = instantsearch({
-    indexName: 'skyclerk.com',
-    searchClient: algoliasearch('YWD5XDVOQH', 'a08ccd56c1471e87e02a181681236597'),
-
-    // Called when a search happens
-    searchFunction(helper) {
-      // Don't search on empty
-      if(helper.state.query === '')
-      {
-          document.querySelector('#hits').innerHTML = '';
-          return;
-        }
-
-        // Send the search.
-        helper.search();
-      }
-    });
-
-    // Build search widget.
-    search.addWidgets([
-      instantsearch.widgets.searchBox({
-        container: '#searchbox',
-        autofocus: true,
-        showSubmit: false,
-        showReset: false,
-        placeholder: "Enter a question, keyword, or topic",
-        cssClasses: {
-          input: [ 'form-input', 'h-15', 'block', 'w-full', 'pl-10', 'sm:text-lg', 'sm:leading-5' ]
-        }
-      }),
-
-
-      instantsearch.widgets.hits({
-        container: '#hits',
-        templates: {
-          item: `
-          <a href="{{ relpermalink }}">
-          {{#helpers.highlight}}{ "attribute": "title" }{{/helpers.highlight}}
-          </a>
-          `,
-        },
-      })
-  ]);
-
-  // Start search
-  search.start();
-}
 
 /* End File */

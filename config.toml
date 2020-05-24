@@ -13,16 +13,5 @@ summaryLength = 20
 [permalinks]
 	categories = "/blog/:slug/"
 
-[outputFormats.Algolia]
-  baseName = "algolia"
-  isPlainText = true
-  mediaType = "application/json"
-  notAlternative = true
-
-[params.algolia]
-  vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
-  params = ["categories", "supportCategories"]
-
-
 [outputs]
-  home = ["HTML", "RSS", "Algolia"]
+  home = ["HTML", "RSS", "JSON"]

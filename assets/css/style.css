@@ -85,12 +85,13 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 
 /* Search Box */
 .search-box .wrapper { @apply relative rounded-md shadow-sm }
-.search-box .wrapper .icon { @apply absolute mt-5 left-0 pl-3 flex items-center pointer-events-none }
+.search-box .wrapper input { @apply form-input h-15 block w-full pl-10 }
+.search-box .wrapper .icon { @apply absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none }
 .search-box .wrapper .icon svg { @apply h-5 w-5 }
-.search-box .wrapper .search-results { @apply mt-2 }
-.search-box .wrapper .search-results ol { @apply rounded-lg shadow-lg }
-.search-box .wrapper .search-results ol li { @apply py-2 pl-5 border-b }
-.search-box .wrapper .search-results ol li a:hover { @apply underline }
+.search-box .search-results { @apply mt-2 }
+.search-box .search-results ol { @apply rounded-lg shadow-lg }
+.search-box .search-results ol li { @apply py-2 pl-5 border-b }
+.search-box .search-results ol li a:hover { @apply underline }
 
 @screen sm {
 	.hero { @apply mt-12 px-6 }
@@ -99,6 +100,7 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 	.hero .cont .title span { @apply text-indigo-600 }
 	.hero .cont .sub-title { @apply mt-5 text-lg max-w-xl mx-auto }
 	.hero .cont .cta { @apply mt-8 flex justify-center }
+	.search-box .wrapper input { @apply text-lg leading-5 }
 }
 
 @screen md {
