@@ -11,7 +11,7 @@
 
 			{{ range $key, $value := .Site.Taxonomies.categories }}
 			<li class="capitalize">
-				<a href="/blog/{{ $key | urlize }}">{{ $key | humanize }} ({{ len $value }})</a>
+				<a href="{{ .Site.BaseURL }}/blog/{{ $key | urlize }}">{{ $key | humanize }} ({{ len $value }})</a>
 			</li>
 			{{ end }}
 
