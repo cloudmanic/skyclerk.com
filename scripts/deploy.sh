@@ -19,7 +19,7 @@ hugo
 # Commit to Git
 git add -A .
 git commit -m "New deploy of site from deploy.sh"
-#git push origin master
+git push origin master
 
 # Back to root dir
 popd
