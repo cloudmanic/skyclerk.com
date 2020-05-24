@@ -113,5 +113,14 @@ We also offer Skyclerk as a mobile application.</description>
       <description>One of the most useful Skyclerk features for new users is the ability to import past ledger entries via a CSV file.</description>
     </item>
     
+    <item>
+      <title>Contact Skyclerk Support</title>
+      <link>https://cloudmanic.github.io/skyclerk.com/support/contact-us/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloudmanic.github.io/skyclerk.com/support/contact-us/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
