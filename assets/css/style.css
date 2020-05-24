@@ -24,9 +24,10 @@ nav .links .link:hover { @apply text-gray-900 }
 nav .links .sign-in { @apply text-indigo-600 transition duration-150 ease-in-out }
 nav .links .sign-in:hover { @apply text-indigo-900 }
 nav .links .sign-in:focus { @apply outline-none text-indigo-700 }
-.mobile-links { @apply block rounded-md text-base font-medium text-gray-700 transition duration-150 ease-in-out }
-.mobile-links:hover { @apply text-gray-900 bg-gray-50 }
-.mobile-links:focus { @apply outline-none text-gray-900 bg-gray-50 }
+.mobile-links a { @apply block px-3 py-2 mb-1 rounded-md text-base font-medium text-gray-700 transition duration-150 ease-in-out }
+.mobile-links a.sign-in { @apply hidden }
+.mobile-links a:hover { @apply text-gray-900 bg-gray-50 }
+.mobile-links a:focus { @apply outline-none text-gray-900 bg-gray-50 }
 
 nav .main-links .link { @apply inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-900 transition duration-150 ease-in-out }
 nav .main-links .link.active { @apply border-indigo-500  }

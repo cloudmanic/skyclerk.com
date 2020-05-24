@@ -4,7 +4,9 @@
 	<ul>
 		{{ range $row := .Params.must_reads }}
 		<li>
-			<a href="{{ .Site.BaseURL }}{{ $row }}">{{ with $.Site.GetPage $row }}{{ .Title }}{{ end }}</a>
+			{{ with $.Site.GetPage $row }}
+			<a href="{{ .Permalink }}">{{ .Title }}</a>
+			{{ end }}
 		</li>
 		{{end}}
 	</ul>
