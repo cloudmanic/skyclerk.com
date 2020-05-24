@@ -1,4 +1,4 @@
-baseURL = "http://skyclerk.com/"
+baseURL = "https://cloudmanic.github.io/skyclerk.com/"
 languageCode = "en-us"
 title = "Skyclerk"
 publishDir = "docs"

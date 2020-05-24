@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ledger Entries on Skyclerk</title>
-    <link>http://skyclerk.com/supportcategories/ledger-entries/</link>
+    <link>https://cloudmanic.github.io/skyclerk.com/supportcategories/ledger-entries/</link>
     <description>Recent content in Ledger Entries on Skyclerk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 17 Jun 2019 20:17:58 -0700</lastBuildDate>
     
-	<atom:link href="http://skyclerk.com/supportcategories/ledger-entries/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cloudmanic.github.io/skyclerk.com/supportcategories/ledger-entries/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to change your currency?</title>
-      <link>http://skyclerk.com/support/how-to-change-your-currency/</link>
+      <link>https://cloudmanic.github.io/skyclerk.com/support/how-to-change-your-currency/</link>
       <pubDate>Mon, 17 Jun 2019 20:17:58 -0700</pubDate>
       
-      <guid>http://skyclerk.com/support/how-to-change-your-currency/</guid>
+      <guid>https://cloudmanic.github.io/skyclerk.com/support/how-to-change-your-currency/</guid>
       <description>Skyclerk supports many different currencies. Currently, you can only update your currency via our web application (mobile does not support currency settings).</description>
     </item>
     
     <item>
       <title>How do I import my ledger from a CSV?</title>
-      <link>http://skyclerk.com/support/how-do-i-import-ledger-entries-from-a-csv-file/</link>
+      <link>https://cloudmanic.github.io/skyclerk.com/support/how-do-i-import-ledger-entries-from-a-csv-file/</link>
       <pubDate>Mon, 17 Jun 2019 20:10:58 -0700</pubDate>
       
-      <guid>http://skyclerk.com/support/how-do-i-import-ledger-entries-from-a-csv-file/</guid>
+      <guid>https://cloudmanic.github.io/skyclerk.com/support/how-do-i-import-ledger-entries-from-a-csv-file/</guid>
       <description>One of the most useful Skyclerk features for new users is the ability to import past ledger entries via a CSV file.</description>
     </item>
     
