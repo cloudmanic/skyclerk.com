@@ -84,6 +84,7 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 .support-landing { @apply flex flex-row mt-15 grid gap-5 max-w-lg mx-auto }
 
 /* Search Box */
+.search-box .highlight { @apply py-1 bg-yellow-200	 }
 .search-box .wrapper { @apply relative rounded-md shadow-sm }
 .search-box .wrapper input { @apply form-input h-15 block w-full pl-10 }
 .search-box .wrapper .icon { @apply absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none }

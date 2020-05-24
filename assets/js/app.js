@@ -3,6 +3,22 @@
 var app = new Vue({
   el: '#app',
 
+  // Filters
+  filters: {
+    // Highlight searched term
+    highlight: function(value, searchTerm) {
+      let index = value.toLowerCase().indexOf(searchTerm.toLowerCase());
+
+      if(index < 0)
+      {
+        return value;
+      }
+
+      return value.substring(0,index) + "<span class='highlight'>" + value.substring(index,index+searchTerm.length) + "</span>" + value.substring(index + searchTerm.length);
+    }
+  },
+
+    // Data useed in this componentpack
 	data: {
     // Search term
     searchTerm: "",

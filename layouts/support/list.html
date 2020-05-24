@@ -27,9 +27,7 @@
 				<div class="search-results">
 					<ol>
 						<li v-for="row in searchResults">
-							<a v-bind:href="row.item.permalink">
-								{{"{{"}} row.item.title {{"}}"}}
-							</a>
+							<a v-bind:href="row.item.permalink" v-html="$options.filters.highlight(row.item.title, searchTerm)"></a>
 						</li>
 					</ol>
 				</div>
