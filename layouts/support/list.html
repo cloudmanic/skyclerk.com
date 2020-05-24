@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+<div class="min-h-0 pb-20 bg-white">
+	{{- partial "main-nav.html" . -}}
+
+	<div class="py-10">
+
+		<main>
+
+			<div class="lg:flex lg:justify-between mt-2">
+				<h1 class="text-3xl">What can We Help You with Today?</h1>
+				<a href="" class="btn btn-black inline-block mt-4 lg:mt-0">Contact Us</a>
+			</div>
+
+			<div class="mt-6">
+				<div class="mt-1 relative rounded-md shadow-sm">
+					<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+						<svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+							<path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" /></svg>
+					</div>
+					<input id="question" class="form-input h-15 block w-full pl-10 sm:text-lg sm:leading-5" placeholder="Enter a question, keyword, or topic" />
+				</div>
+			</div>
+
+
+			<div class="support-landing">
+
+				{{ range $key, $row := .Site.Taxonomies.supportCategories }}
+				<div class="box flex-col">
+					<div class="header">
+						<h2 class="header capitalize">{{ $key | humanize }}</h2>
+					</div>
+
+					<div class="body">
+						<ul>
+							{{ range $key2, $row2 := $row }}
+							<li>
+								<a href="{{ $row2.Permalink }}">{{ $row2.Title }}</a>
+							</li>
+							{{ end }}
+						</ul>
+					</div>
+				</div>
+				{{ end }}
+
+			</div>
+
+		</main>
+
+	</div>
+</div>
+
+
+{{- partial "footer-signup.html" . -}}
+{{- partial "footer.html" . -}}
+
+{{ end }}

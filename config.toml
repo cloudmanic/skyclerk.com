@@ -1,0 +1,14 @@
+baseURL = "http://skyclerk.com/"
+languageCode = "en-us"
+title = "Skyclerk"
+publishDir = "docs"
+disableHugoGeneratorInject = true
+disableKinds = ["taxonomyTerm"]
+summaryLength = 20
+
+[taxonomies]
+  category = "categories"
+  supportCategory = "supportCategories"
+
+[permalinks]
+	categories = "/blog/:slug/"

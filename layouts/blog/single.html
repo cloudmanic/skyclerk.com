@@ -1,0 +1,84 @@
+{{ define "main" }}
+
+<div class="min-h-screen bg-white">
+	{{- partial "main-nav.html" . -}}
+
+	<div class="py-10">
+
+		<main>
+
+			<div class="blog">
+
+				<div class="cont">
+
+					<h1 class="text-2xl py-5 leading-7 font-semibold text-gray-900">{{ .Title }}</h1>
+
+					<div class="flex flex-row justify-between pb-6">
+
+						{{- partial (printf "blog/authors/%s.html" .Params.author) . -}}
+
+
+						{{ if .Params.categories }}
+						<p class="text-sm leading-5 font-medium text-gray-300 mr-40">
+							{{- range .Params.categories -}}
+							<a class="hover:underline" href="{{- "/blog/" | relLangURL -}}{{- . | urlize -}}">{{- . -}}</a>
+							{{- end -}}
+						</p>
+						{{end}}
+
+					</div>
+
+					<div class="blog-body">
+						{{ .Content }}
+					</div>
+
+					{{- partial "blog/must-reads.html" . -}}
+
+
+
+					<div class="article__comments">
+						<div id="disqus_thread"></div>
+						<script>
+							var disqus_config = function() {
+								this.page.url = "{{- .Title | urlize -}}";
+								this.page.identifier = "{{- .Title | urlize -}}";
+							};
+							(function() {
+								// DON'T EDIT BELOW THIS LINE
+								var d = document,
+									s = d.createElement("script");
+								s.src = "https://skyclerk.disqus.com/embed.js";
+								s.setAttribute("data-timestamp", +new Date());
+								(d.head || d.body).appendChild(s);
+							})();
+
+						</script>
+						<noscript>
+							Please enable JavaScript to view the
+							<a href="https://disqus.com/?ref_noscript">
+								comments powered by Disqus.
+							</a>
+						</noscript>
+					</div>
+
+				</div>
+
+				<div class="w-1/4 px-10">
+					{{- partial "blog/categories.html" . -}}
+					{{- partial "blog/ad.html" . -}}
+					{{- partial "blog/follow-us.html" . -}}
+				</div>
+
+			</div>
+
+		</main>
+
+	</div>
+</div>
+
+
+{{- partial "footer-signup.html" . -}}
+{{- partial "footer.html" . -}}
+
+
+{{ end }}

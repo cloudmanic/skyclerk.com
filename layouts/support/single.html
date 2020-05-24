@@ -1,0 +1,72 @@
+{{ define "main" }}
+
+<div class="min-h-screen bg-white">
+	{{- partial "main-nav.html" . -}}
+
+	<div class="py-10">
+
+		<main>
+
+			<div class="blog">
+
+				<div class="w-1/3 px-10">
+
+					{{ if .Params.supportCategories }}
+					{{ range $key, $row := .Params.supportCategories }}
+					<div class="box">
+						<div class="header">
+							<h3>{{- $row -}}</h3>
+						</div>
+
+						<div class="body">
+							<ul>
+								{{ $posts := index $.Site.Taxonomies.supportCategories ($row | urlize)  }}
+								{{ range $key2, $row2 := $posts }}
+								<li>
+									<a href="{{ $row2.Permalink }}">{{ $row2.Title }}</a>
+								</li>
+								{{ end }}
+							</ul>
+						</div>
+					</div>
+					{{ end }}
+					{{ end }}
+
+
+					{{- partial "blog/follow-us.html" . -}}
+				</div>
+
+				<div class="cont">
+
+					<h1 class="text-2xl py-5 leading-7 font-semibold text-gray-900">{{ .Title }}</h1>
+
+					<div class="pb-6">
+						{{ if .Params.supportCategories }}
+						<p class="text-sm leading-5 font-medium text-gray-300 mr-40">
+							{{- range .Params.supportCategories -}}
+							{{- . -}}
+							{{- end -}}
+						</p>
+						{{end}}
+					</div>
+
+					<div class="blog-body">
+						{{ .Content }}
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</main>
+
+	</div>
+</div>
+
+
+{{- partial "footer-signup.html" . -}}
+{{- partial "footer.html" . -}}
+
+
+{{ end }}

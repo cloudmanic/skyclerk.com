@@ -1,0 +1,20 @@
+<div class="box">
+	<div class="header">
+		<h3>Categories</h3>
+	</div>
+
+	<div class="body">
+		<ul>
+			<li>
+				<a href="/blog">All Posts</a>
+			</li>
+
+			{{ range $key, $value := .Site.Taxonomies.categories }}
+			<li class="capitalize">
+				<a href="/blog/{{ $key | urlize }}">{{ $key | humanize }} ({{ len $value }})</a>
+			</li>
+			{{ end }}
+
+		</ul>
+	</div>
+</div>

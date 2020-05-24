@@ -1,0 +1,115 @@
+@tailwind base;
+
+@tailwind components;
+
+/* Colors */
+.color-primary-bg { @apply border-indigo-600 }
+.color-primary-text { @apply text-indigo-600 }
+.color-primary-border { @apply border-indigo-600 }
+
+
+/* Buttons */
+.btn { @apply items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 transition duration-150 ease-in-out }
+.btn:focus { @apply outline-none shadow-outline }
+.btn:hover { @apply bg-indigo-500 }
+.btn-black { @apply bg-gray-900 px-5 py-3 border border-transparent }
+.btn-black:focus { @apply outline-none shadow-outline }
+.btn-black:hover { @apply bg-gray-800 outline-none shadow-outline }
+.btn-small { @apply }
+
+/* Nav */
+nav .links .link { @apply font-medium text-gray-500 transition duration-150 ease-in-out }
+nav .links .link:focus { @apply outline-none text-gray-900 }
+nav .links .link:hover { @apply text-gray-900 }
+nav .links .sign-in { @apply text-indigo-600 transition duration-150 ease-in-out }
+nav .links .sign-in:hover { @apply text-indigo-900 }
+nav .links .sign-in:focus { @apply outline-none text-indigo-700 }
+.mobile-links { @apply block rounded-md text-base font-medium text-gray-700 transition duration-150 ease-in-out }
+.mobile-links:hover { @apply text-gray-900 bg-gray-50 }
+.mobile-links:focus { @apply outline-none text-gray-900 bg-gray-50 }
+
+nav .main-links .link { @apply inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-900 transition duration-150 ease-in-out }
+nav .main-links .link.active { @apply border-indigo-500  }
+nav .main-links .link:focus { @apply outline-none border-indigo-700 }
+nav .main-links .link:hover { @apply text-gray-700 border-gray-300  }
+nav .main-links .sign-in { @apply inline-flex text-indigo-600 transition duration-150 ease-in-out }
+nav .main-links .sign-in:hover { @apply text-indigo-900 }
+nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
+
+/* Hero */
+.hero { @apply mt-10 mx-auto max-w-screen-xl px-4 }
+.hero .cont .title { @apply text-4xl tracking-tight leading-10 font-extrabold text-gray-900 }
+.hero .cont .sub-title { @apply mt-3 text-base text-gray-500 }
+.hero .cont .cta { @apply mt-5 }
+
+/* Header Box */
+.box { @apply w-full rounded-lg shadow-lg }
+.box .header { @apply flex-shrink-0 bg-black text-white text-xl leading-9 font-extrabold text-center py-1 }
+.box .body { @apply px-10 py-5 }
+.box .body ul li { @apply py-2 }
+.box .body ul li a { @apply px-1 border-b-2 border-transparent text-base font-medium leading-5 text-gray-500 }
+.box .body ul li a:hover { @apply text-gray-700 border-gray-300  }
+.box .body ul li a:focus { @apply outline-none text-gray-700 border-gray-300 }
+
+/* Follow Us Widget */
+.follow-us { @apply my-5 }
+.follow-us .body { @apply flex justify-between }
+.follow-us .icon { @apply text-black }
+.follow-us .icon:hover { @apply text-gray-500 }
+.follow-us svg { @apply h-12 w-12 }
+
+/* Blog */
+.blog .cont { @apply rounded-lg shadow-lg px-10 py-5 border-gray-100 border }
+.blog-body { @apply text-base leading-7 text-gray-500 }
+.blog-body p { @apply py-2 text-base leading-loose }
+.blog-body ul, .blog-body ol { @apply py-2 ml-10 mr-20 }
+.blog-body ul li, .blog-body ol li { @apply py-2 }
+.blog-body ol { list-style-type: decimal; }
+.blog-body ul { list-style-type: disc; }
+.blog-body figure { @apply py-2 }
+.blog-body figure img { @apply m-auto; }
+.blog-body a { @apply color-primary-text }
+.blog-body a:hover { @apply underline }
+.blog-body h2 { @apply text-2xl py-4 leading-7 font-semibold text-gray-900 }
+.blog-body blockquote { @apply relative p-5 py-10 mt-6 mb-5 text-2xl italic border-l-4 color-primary-border }
+
+/* Related Posts */
+.related-posts h3 { @apply text-xl py-4 leading-7 font-semibold text-gray-900 }
+.related-posts ul { list-style-type: none; }
+.related-posts ul li { @apply pl-8 py-2 color-primary-text }
+.related-posts ul li a:hover { @apply underline }
+
+/* Support */
+.support-landing { @apply flex flex-row mt-15 grid gap-5 max-w-lg mx-auto }
+
+@screen sm {
+	.hero { @apply mt-12 px-6 }
+	.hero .cont { @apply text-center }
+	.hero .cont .title { @apply text-5xl leading-none }
+	.hero .cont .title span { @apply text-indigo-600 }
+	.hero .cont .sub-title { @apply mt-5 text-lg max-w-xl mx-auto }
+	.hero .cont .cta { @apply mt-8 flex justify-center }
+}
+
+@screen md {
+	.hero { @apply mt-16 }
+	.hero .cont .title { @apply text-6xl }
+	.hero .cont .sub-title { @apply mt-5 text-xl }
+	.hero .cont .cta .btn { @apply py-4 text-lg px-10 }
+}
+
+@screen lg {
+	.hero { @apply mt-20 px-8  }
+	.hero .cont { @apply text-left }
+	.hero .cont .sub-title { @apply mx-0 }
+	.hero .cont .cta { @apply justify-start }
+	.blog { @apply flex flex-row flex-wrap }
+	.blog .cont { @apply w-2/3 }
+	.support-landing { @apply grid-cols-3 max-w-none }
+}
+
+@screen xl {
+	.hero { @apply mt-28  }
+}
+
+@tailwind utilities;
