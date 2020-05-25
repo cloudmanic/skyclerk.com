@@ -1,4 +1,4 @@
-<a href="{{ $.Site.BaseURL }}" class="link">Home</a>
-<a href="{{ "support" | absURL }}" class="link md:ml-8">Support</a>
-<a href="{{ "blog" | absURL }}" class="link md:ml-8">Blog</a>
+<a href="{{ $.Site.BaseURL }}" class="link {{ if eq .Section ""  }}active{{ end }}">Home</a>
+<a href="{{ "support" | absURL }}" class="link md:ml-8 {{ if eq .Section "support" }}active{{ end }}">Support</a>
+<a href="{{ "blog" | absURL }}" class="link md:ml-8 {{ if eq .Section "blog" }}active{{ end }}">Blog</a>
 <a href="https://app.skyclerk.com" class="md:ml-8 link sign-in">Sign in</a>

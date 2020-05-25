@@ -19,6 +19,7 @@
 
 /* Nav */
 nav .links .link { @apply font-medium text-gray-500 transition duration-150 ease-in-out }
+nav .links .link.active { @apply pb-3 border-b-2 border-indigo-500  }
 nav .links .link:focus { @apply outline-none text-gray-900 }
 nav .links .link:hover { @apply text-gray-900 }
 nav .links .sign-in { @apply text-indigo-600 transition duration-150 ease-in-out }
