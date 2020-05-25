@@ -17,7 +17,6 @@
 
 						{{- partial (printf "blog/authors/%s.html" .Params.author) . -}}
 
-
 						{{ if .Params.categories }}
 						<p class="text-sm leading-5 font-medium text-gray-300 mr-40">
 							{{- range .Params.categories -}}
@@ -63,7 +62,7 @@
 
 				</div>
 
-				<div class="w-1/4 px-10">
+				<div class="mt-5 lg:mt-0 lg:w-1/4 px-10">
 					{{- partial "blog/categories.html" . -}}
 					{{- partial "blog/ad.html" . -}}
 					{{- partial "blog/follow-us.html" . -}}
