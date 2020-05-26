@@ -1,0 +1,21 @@
+<div class="case-study-widget-item">
+	<div class="img-wrapper">
+		<img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt="{{ .Title }}" />
+	</div>
+	<div class="body">
+		<div class="cont">
+			{{ if .Params.categories }}
+			<p class="category">
+				{{range .Params.categories}}
+				<a href="{{ "/blog/" | relLangURL }}{{ . | urlize }}" class="hover:underline">{{ . }}</a>
+				{{end}}
+			</p>
+			{{end}}
+
+			<a href="{{ .URL }}" class="content-body">
+				<h3>{{ .Title }}</h3>
+				<p>{{ .Summary | safeHTML }}</p>
+			</a>
+		</div>
+	</div>
+</div>

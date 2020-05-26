@@ -95,6 +95,17 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 .search-box .search-results ol li { @apply py-2 pl-5 border-b }
 .search-box .search-results ol li a:hover { @apply underline }
 
+/* Case Study Widget */
+.case-study-widget-item { @apply flex flex-col rounded-lg shadow-lg overflow-hidden }
+.case-study-widget-item .img-wrapper { @apply flex-shrink-0 }
+.case-study-widget-item .img-wrapper img { @apply h-48 w-full object-cover }
+.case-study-widget-item .body { @apply flex-1 bg-white p-6 flex flex-col justify-between }
+.case-study-widget-item .body .cont { @apply flex-1 }
+.case-study-widget-item .body .cont .category { @apply text-sm leading-5 font-medium text-indigo-600 }
+.case-study-widget-item .body .cont .content-body { @apply block }
+.case-study-widget-item .body .cont .content-body p { @apply mt-3 text-base leading-6 text-gray-500 }
+.case-study-widget-item .body .cont .content-body h3 { @apply mt-2 text-xl leading-7 font-semibold text-gray-900 }
+
 /* Contact Form */
 /*
 TODO(spicer): Make this work. For some reason it was not.
