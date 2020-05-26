@@ -106,6 +106,12 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 .case-study-widget-item .body .cont .content-body p { @apply mt-3 text-base leading-6 text-gray-500 }
 .case-study-widget-item .body .cont .content-body h3 { @apply mt-2 text-xl leading-7 font-semibold text-gray-900 }
 
+/* Single Page */
+.single-page { @apply rounded-lg shadow-lg px-10 py-5 border-gray-100 border }
+.single-page p { @apply py-1 }
+.single-page h1 { @apply pb-5 text-black text-3xl font-black }
+.single-page h2 { @apply py-3 text-black text-2xl font-medium }
+
 /* Contact Form */
 /*
 TODO(spicer): Make this work. For some reason it was not.

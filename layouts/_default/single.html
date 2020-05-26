@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<div class="min-h-screen bg-white">
+	{{- partial "nav/main.html" . -}}
+
+	<div class="py-10">
+
+		<main>
+
+			<div class="single-page">
+				{{- .Content -}}
+			</div>
+
+		</main>
+
+	</div>
+</div>
+
+
+{{- partial "footer-signup.html" . -}}
+{{- partial "footer.html" . -}}
+
+
+{{ end }}
