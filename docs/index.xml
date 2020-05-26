@@ -175,5 +175,15 @@ We also offer Skyclerk as a mobile application.</description>
       <description></description>
     </item>
     
+    <item>
+      <title>Terms of Service</title>
+      <link>https://skyclerk.com/terms-of-service/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://skyclerk.com/terms-of-service/</guid>
+      <description>Terms of Service Agreement to Terms of Use Skyclerk is a Cloudmanic Labs, LLC Company
+ These Terms and Conditions of Use (the Terms of Use) apply to the Cloudmanic Labs, LLC web site located at cloudmanic.</description>
+    </item>
+    
   </channel>
 </rss>
