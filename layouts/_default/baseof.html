@@ -27,7 +27,7 @@
 
 	{{ if $.Param "image" }}
 	<meta property="og:image" content="{{ $.Param "image" | absURL  }}" />
-	<meta property="og:image:secure_url" content="{{ $.Param "og_image" | absURL }}" />
+	<meta property="og:image:secure_url" content="{{ $.Param "image" | absURL }}" />
 	{{ else }}
 	<meta property="og:image" content="{{ $shareImg.Permalink }}" />
 	<meta property="og:image:secure_url" content="{{ $shareImg.Permalink }}" />
