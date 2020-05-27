@@ -9,6 +9,17 @@ ul.list li a { @apply px-1 border-b-2 border-transparent text-base font-medium l
 ul.list li a:hover { @apply text-gray-700 border-gray-300  }
 ul.list li a:focus { @apply outline-none text-gray-700 border-gray-300 }
 
+/* Table */
+.table-striped { @apply flex flex-col }
+.table-striped .table-cont { @apply -my-2 py-2 overflow-x-auto }
+
+.table-striped .table-wrapper { @apply align-middle inline-block min-w-full shadow overflow-hidden border-b border-gray-200}
+.table-striped  table { @apply min-w-full }
+.table-striped  th { @apply px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider }
+.table-striped  table tr:nth-child(odd) { @apply bg-white }
+.table-striped  table tr:nth-child(even) { @apply bg-gray-50 }
+.table-striped  table tr td { @apply px-6 py-4 whitespace-no-wrap text-left text-sm leading-5 text-gray-500 }
+
 /* Colors */
 .color-primary-bg { @apply border-indigo-600 }
 .color-primary-text { @apply text-indigo-600 }
@@ -141,6 +152,7 @@ TODO(spicer): Make this work. For some reason it was not.
 	.hero .cont .sub-title { @apply mt-5 text-lg max-w-xl mx-auto }
 	.hero .cont .cta { @apply mt-8 flex justify-center }
 	.search-box .wrapper input { @apply text-lg leading-5 }
+	.table-striped .table-cont { @apply -mx-6 px-6 }
 }
 
 @screen md {
@@ -158,6 +170,7 @@ TODO(spicer): Make this work. For some reason it was not.
 	.blog { @apply flex flex-row flex-wrap }
 	.blog .cont { @apply w-2/3 }
 	.support-landing { @apply grid-cols-3 max-w-none }
+	.table-striped .table-cont { @apply -mx-8 px-8 }
 }
 
 @screen xl {
