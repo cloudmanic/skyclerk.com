@@ -1,4 +1,5 @@
 {{- $favicon := resources.Get "images/favicon.ico" -}}
+{{- $shareImg := resources.Get "images/skyclerk-share.png" -}}
 {{- $js := resources.Get "js/app.js" | minify | fingerprint -}}
 {{- $style := resources.Get "css/build.css" | minify | fingerprint -}}
 
@@ -16,6 +17,7 @@
 	<link rel="stylesheet" href="{{ $style.Permalink }}">
 
 	<!-- open graph -->
+	<meta property="fb:app_id" content="406939203347484">
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="{{ .Title }}" />
 	<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
@@ -23,18 +25,23 @@
 	<meta property="og:url" content="{{ .Permalink }}" />
 	<meta property="og:locale" content="en">
 
-	{{ if $.Param "og_image" }}
-	<meta property="og:image" content="{{ $.Param "og_image" | absURL  }}" />
+	{{ if $.Param "image" }}
+	<meta property="og:image" content="{{ $.Param "image" | absURL  }}" />
 	<meta property="og:image:secure_url" content="{{ $.Param "og_image" | absURL }}" />
+	{{ else }}
+	<meta property="og:image" content="{{ $shareImg.Permalink }}" />
+	<meta property="og:image:secure_url" content="{{ $shareImg.Permalink }}" />
 	{{ end }}
 	<meta property="og:type" content="website" />
 
 	<!-- twitter -->
+	<meta name="twitter:site" content="@skyclerk" />
 	<meta name="twitter:card" content="summary_large_image" />
-	{{ if $.Param "og_image" }}
-	<meta name="twitter:image:src" content="{{ $.Param "og_image" | absURL  }}" />
+	{{ if $.Param "image" }}
+	<meta name="twitter:image:src" content="{{ $.Param "image" | absURL  }}" />
+	{{ else }}
+	<meta name="twitter:image:src" content="{{ $shareImg.Permalink }}" />
 	{{ end }}
-	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
 
 
