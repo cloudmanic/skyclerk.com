@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Freelancing on Skyclerk</title>
+    <link>https://skyclerk.com/blog/freelancing/</link>
+    <description>Recent content in Freelancing on Skyclerk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 May 2020 20:18:58 -0700</lastBuildDate>
+    
+	<atom:link href="https://skyclerk.com/blog/freelancing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Taxes for Freelancers: The Pros and Cons of Registering Your Freelance Income as an LLC or S-Corp</title>
+      <link>https://skyclerk.com/blog/taxes-for-freelancers-llc-vs-s-corp/</link>
+      <pubDate>Tue, 26 May 2020 20:18:58 -0700</pubDate>
+      
+      <guid>https://skyclerk.com/blog/taxes-for-freelancers-llc-vs-s-corp/</guid>
+      <description>If you&amp;rsquo;ve been freelancing on the side of your full-time job over the past few years, you&amp;rsquo;re not alone. In three short years, gig workers are expected to rake in&amp;nbsp;over $450 billion.</description>
+    </item>
+    
+  </channel>
+</rss>
