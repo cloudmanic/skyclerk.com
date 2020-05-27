@@ -29,6 +29,7 @@
 
 					<div class="blog-body">
 						{{ .Content }}
+						{{- partial "blog/footer-share.html" . -}}
 					</div>
 
 					{{- partial "blog/must-reads.html" . -}}
