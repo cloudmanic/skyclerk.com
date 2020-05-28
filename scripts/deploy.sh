@@ -14,7 +14,7 @@ export NODE_ENV=production
 npx tailwindcss build assets/css/style.css -o assets/css/build.css
 
 # Build HTML
-hugo
+hugo --minify
 
 # Commit to Git
 git add -A .
