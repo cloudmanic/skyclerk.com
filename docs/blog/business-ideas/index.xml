@@ -1,3 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Business Ideas on Skyclerk</title><link>https://skyclerk.com/blog/business-ideas/</link><description>Recent content in Business Ideas on Skyclerk</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 25 Apr 2020 20:18:58 -0700</lastBuildDate><atom:link href="https://skyclerk.com/blog/business-ideas/index.xml" rel="self" type="application/rss+xml"/><item><title>Dealing with Covid-19 - Small Business or Freelancer Depression</title><link>https://skyclerk.com/blog/dealing-with-covid-19-small-business-or-freelancer-depression/</link><pubDate>Sat, 25 Apr 2020 20:18:58 -0700</pubDate><guid>https://skyclerk.com/blog/dealing-with-covid-19-small-business-or-freelancer-depression/</guid><description>
-&lt;p>If you are a small business owner or sole entrepreneur and you need financial help please visit the &lt;a href="https://www.sba.gov/page/coronavirus-covid-19-small-business-guidance-loan-resources">Small Business Administration’s&lt;/a> support
-website.</description></item><item><title>If you Run a Small Business Park In the Back of the Parking Lot</title><link>https://skyclerk.com/blog/if-you-run-a-small-business-park-in-the-back-of-the-parking-lot/</link><pubDate>Wed, 25 Sep 2019 20:18:58 -0700</pubDate><guid>https://skyclerk.com/blog/if-you-run-a-small-business-park-in-the-back-of-the-parking-lot/</guid><description>Just about every morning as I drop my daughter off at daycare I have a bit of nostalgia for an important business lesson my dad taught me as a kid -- as a small business owner you should always park your car in the back of the parking lot.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Business Ideas on Skyclerk</title>
+    <link>https://skyclerk.com/blog/business-ideas/</link>
+    <description>Recent content in Business Ideas on Skyclerk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Apr 2020 20:18:58 -0700</lastBuildDate>
+    
+	<atom:link href="https://skyclerk.com/blog/business-ideas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dealing with Covid-19 - Small Business or Freelancer Depression</title>
+      <link>https://skyclerk.com/blog/dealing-with-covid-19-small-business-or-freelancer-depression/</link>
+      <pubDate>Sat, 25 Apr 2020 20:18:58 -0700</pubDate>
+      
+      <guid>https://skyclerk.com/blog/dealing-with-covid-19-small-business-or-freelancer-depression/</guid>
+      <description>
+&lt;p&gt;If you are a small business owner or sole entrepreneur and you need financial help please visit the &lt;a href=&#34;https://www.sba.gov/page/coronavirus-covid-19-small-business-guidance-loan-resources&#34;&gt;Small Business Administration’s&lt;/a&gt; support
+	website.
+	</description>
+    </item>
+    
+    <item>
+      <title>If you Run a Small Business Park In the Back of the Parking Lot</title>
+      <link>https://skyclerk.com/blog/if-you-run-a-small-business-park-in-the-back-of-the-parking-lot/</link>
+      <pubDate>Wed, 25 Sep 2019 20:18:58 -0700</pubDate>
+      
+      <guid>https://skyclerk.com/blog/if-you-run-a-small-business-park-in-the-back-of-the-parking-lot/</guid>
+      <description>Just about every morning as I drop my daughter off at daycare I have a bit of nostalgia for an important business lesson my dad taught me as a kid -- as a small business owner you should always park your car in the back of the parking lot.</description>
+    </item>
+    
+  </channel>
+</rss>

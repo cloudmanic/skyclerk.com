@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Company News on Skyclerk</title><link>https://skyclerk.com/blog/company-news/</link><description>Recent content in Company News on Skyclerk</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Dec 2019 20:18:58 -0700</lastBuildDate><atom:link href="https://skyclerk.com/blog/company-news/index.xml" rel="self" type="application/rss+xml"/><item><title>Skyclerk 3.0 Has Arrived - Crazy Fast Bookkeeping Software</title><link>https://skyclerk.com/blog/skyclerk-3-0-has-arrived-crazy-fast-bookkeeping-software/</link><pubDate>Tue, 10 Dec 2019 20:18:58 -0700</pubDate><guid>https://skyclerk.com/blog/skyclerk-3-0-has-arrived-crazy-fast-bookkeeping-software/</guid><description>In June of this year, we announced that Skyclerk was changing -- changing for the better. We were saying goodbye to the Cloudmanic Labs umbrella and taking on the world as just Skyclerk.</description></item><item><title>Cheapest Bookkeeping Software on the Market</title><link>https://skyclerk.com/blog/cheapest-bookkeeping-software-on-the-market/</link><pubDate>Tue, 16 Jul 2019 20:18:58 -0700</pubDate><guid>https://skyclerk.com/blog/cheapest-bookkeeping-software-on-the-market/</guid><description>
-&lt;p>Today, I am very pleased to announce we are cutting the price of &lt;a href="https://skyclerk.com">Skyclerk&lt;/a> by 60% making it the cheapest &lt;a href="https://en.wikipedia.org/wiki/Bookkeeping">bookkeeping&lt;/a> software on the market.</description></item><item><title>A New Skyclerk is Coming - today we release a new site</title><link>https://skyclerk.com/blog/a-new-skyclerk-is-coming-today-we-release-a-new-site/</link><pubDate>Wed, 26 Jun 2019 20:18:58 -0700</pubDate><guid>https://skyclerk.com/blog/a-new-skyclerk-is-coming-today-we-release-a-new-site/</guid><description>
-&lt;p>This coming August, &lt;a href="https://skyclerk.com">Skyclerk&lt;/a> will turn 9 years old. Today, we have tens of thousands of users and have grown month over month since the day we launched, without any help from a venture capitalist or outside
-funding.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Company News on Skyclerk</title>
+    <link>https://skyclerk.com/blog/company-news/</link>
+    <description>Recent content in Company News on Skyclerk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Dec 2019 20:18:58 -0700</lastBuildDate>
+    
+	<atom:link href="https://skyclerk.com/blog/company-news/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Skyclerk 3.0 Has Arrived - Crazy Fast Bookkeeping Software</title>
+      <link>https://skyclerk.com/blog/skyclerk-3-0-has-arrived-crazy-fast-bookkeeping-software/</link>
+      <pubDate>Tue, 10 Dec 2019 20:18:58 -0700</pubDate>
+      
+      <guid>https://skyclerk.com/blog/skyclerk-3-0-has-arrived-crazy-fast-bookkeeping-software/</guid>
+      <description>In June of this year, we announced that Skyclerk was changing -- changing for the better. We were saying goodbye to the Cloudmanic Labs umbrella and taking on the world as just Skyclerk.</description>
+    </item>
+    
+    <item>
+      <title>Cheapest Bookkeeping Software on the Market</title>
+      <link>https://skyclerk.com/blog/cheapest-bookkeeping-software-on-the-market/</link>
+      <pubDate>Tue, 16 Jul 2019 20:18:58 -0700</pubDate>
+      
+      <guid>https://skyclerk.com/blog/cheapest-bookkeeping-software-on-the-market/</guid>
+      <description>
+&lt;p&gt;Today, I am very pleased to announce we are cutting the price of &lt;a href=&#34;https://skyclerk.com&#34;&gt;Skyclerk&lt;/a&gt; by 60% making it the cheapest &lt;a href=&#34;https://en.wikipedia.org/wiki/Bookkeeping&#34;&gt;bookkeeping&lt;/a&gt; software on the market.
+	</description>
+    </item>
+    
+    <item>
+      <title>A New Skyclerk is Coming - today we release a new site</title>
+      <link>https://skyclerk.com/blog/a-new-skyclerk-is-coming-today-we-release-a-new-site/</link>
+      <pubDate>Wed, 26 Jun 2019 20:18:58 -0700</pubDate>
+      
+      <guid>https://skyclerk.com/blog/a-new-skyclerk-is-coming-today-we-release-a-new-site/</guid>
+      <description>
+&lt;p&gt;This coming August, &lt;a href=&#34;https://skyclerk.com&#34;&gt;Skyclerk&lt;/a&gt; will turn 9 years old. Today, we have tens of thousands of users and have grown month over month since the day we launched, without any help from a venture capitalist or outside
+	funding.
+	</description>
+    </item>
+    
+  </channel>
+</rss>
