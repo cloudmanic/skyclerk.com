@@ -14,7 +14,7 @@ export NODE_ENV=production
 npx tailwindcss build assets/css/style.css -o assets/css/build.css
 
 # Build HTML
-#hugo --minify
+#hugo --minify // TODO(spicer): this messes up the SVG for twitter logo
 hugo
 
 # Commit to Git
