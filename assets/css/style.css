@@ -91,6 +91,7 @@ nav .main-links .sign-in:focus { @apply outline-none text-indigo-700 }
 .blog-body a { @apply color-primary-text }
 .blog-body a:hover { @apply underline }
 .blog-body h2 { @apply text-2xl py-4 leading-7 font-semibold text-gray-900 }
+.blog-body h3 { @apply text-xl py-4 leading-7 font-medium text-gray-900 }
 .blog-body blockquote { @apply relative p-5 py-10 mt-6 mb-5 text-2xl italic border-l-4 color-primary-border }
 
 /* Related Posts */
