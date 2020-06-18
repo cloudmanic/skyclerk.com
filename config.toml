@@ -1,10 +1,13 @@
 baseURL = "https://skyclerk.com/"
 languageCode = "en-us"
-title = "Skyclerk"
+title = "Skyclerk Accounting & Bookkeeping"
 publishDir = "docs"
 disableHugoGeneratorInject = true
 disableKinds = ["taxonomyTerm"]
 summaryLength = 20
+
+[params]
+  description = "A bookkeeping tool for freelancers and solo entrepreneurs. The fastest, simplest, most delightful accounting application on the market."
 
 [taxonomies]
   category = "categories"
