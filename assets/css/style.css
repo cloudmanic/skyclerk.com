@@ -25,6 +25,10 @@ ul.list li a:focus { @apply outline-none text-gray-700 border-gray-300 }
 .color-primary-text { @apply text-indigo-600 }
 .color-primary-border { @apply border-indigo-600 }
 
+/* Links */
+a { @apply color-primary-text }
+a:hover { @apply underline }
+
 /* Buttons */
 .btn { @apply items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 transition duration-150 ease-in-out }
 .btn:focus { @apply outline-none shadow-outline }
