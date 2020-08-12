@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spotlight on Skyclerk Accounting &amp; Bookkeeping</title>
@@ -6,10 +6,19 @@
     <description>Recent content in Spotlight on Skyclerk Accounting &amp; Bookkeeping</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jun 2020 12:23:21 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2020 15:28:59 -0700</lastBuildDate>
     
 	<atom:link href="https://skyclerk.com/blog/spotlight/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Business Spotlight: Bex Skincare Acne Management Llc Provides a Warm and Welcoming Environment to a Wide Range of Clients</title>
+      <link>https://skyclerk.com/blog/business-spotlight-bex-skincare-acne-management-llc-provides-a-warm-and-welcoming-environment-to-a-wide-range-of-clients/</link>
+      <pubDate>Wed, 12 Aug 2020 15:28:59 -0700</pubDate>
+      
+      <guid>https://skyclerk.com/blog/business-spotlight-bex-skincare-acne-management-llc-provides-a-warm-and-welcoming-environment-to-a-wide-range-of-clients/</guid>
+      <description>Who is Rebecca Delaney and what is her Business?  Rebecca Delaney is a fun, upbeat, and quirky licensed esthetician.</description>
+    </item>
     
     <item>
       <title>Business Spotlight: Zimri Cellars Continues to Offer Personal Contactless Wine Deliveries in Oregon</title>
@@ -17,7 +26,7 @@
       <pubDate>Thu, 25 Jun 2020 12:23:21 -0700</pubDate>
       
       <guid>https://skyclerk.com/blog/business-spotlight-zimri-cellars-continues-to-offer-personal-contactless-wine-deliveries-in-oregon/</guid>
-      <description>MeetJason (Jay) Bull, winemaker, and owner ofZimri Cellars located in Oregon’s Willamette Valley. Jay lives in Newberg with his wife, Lisa, and their two children and the family dog.</description>
+      <description>Meet Jason Bull, winemaker, and owner of Zimri Cellars located in Oregon’s Willamette Valley.</description>
     </item>
     
   </channel>

@@ -1,1 +1,0 @@
-var app=new Vue({el:'#app',data:{showMobileMenu:false},methods:{mobileMenuToggle:function(){this.showMobileMenu=!this.showMobileMenu;}}})
