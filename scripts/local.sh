@@ -13,7 +13,9 @@ pushd ../
 npx tailwindcss build assets/css/style.css -o assets/css/build.css
 
 # Run local server
+#hugo server -D --bind 0.0.0.0 --baseUrl http://stowe.local:1313
 hugo server -D
+
 
 # Back to root dir
 popd
