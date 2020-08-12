@@ -4,10 +4,9 @@ Public marketing site for Skyclerk.
 
 # Development Notes
 
-* `npx tailwindcss build assets/css/style.css -o assets/css/build.css`
+- `npx tailwindcss build assets/css/style.css -o assets/css/build.css`
 
-* `hugo server -D`
-
+- `hugo server -D`
 
 # Github Pages
 
