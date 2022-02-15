@@ -1,99 +1,95 @@
-{{- $favicon := resources.Get "images/favicon.ico" -}}
-{{- $shareImg := resources.Get "images/skyclerk-share.png" -}}
-{{- $js := resources.Get "js/app.js" | minify | fingerprint -}}
-{{- $style := resources.Get "css/build.css" | minify | fingerprint -}}
+{{- $favicon := resources.Get "images/favicon.ico" -}} {{- $shareImg := resources.Get "images/skyclerk-share.png" -}}
+{{- $js := resources.Get "js/app.js" | minify | fingerprint -}} {{- $style := resources.Get "css/build.css" | minify |
+fingerprint -}}
 
 <!DOCTYPE html>
 <html lang="en" class="bg-white antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>{{ .Title }}</title>
+    <base href="{{ .Site.BaseURL }}" />
+    <meta
+      name="description"
+      content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+    />
+    <link rel="shortcut icon" type="image/png" href="{{ $favicon.Permalink }}" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>{{ .Title }}</title>
-	<base href="{{ .Site.BaseURL }}" />
-	<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
-	<link rel="shortcut icon" type="image/png" href="{{ $favicon.Permalink }}" />
-	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-	<link rel="stylesheet" href="{{ $style.Permalink }}">
+    <!-- open graph -->
+    <meta property="fb:app_id" content="406939203347484" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta
+      property="og:description"
+      content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+    />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:locale" content="en" />
 
-	<!-- open graph -->
-	<meta property="fb:app_id" content="406939203347484">
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="{{ .Title }}" />
-	<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
-	<meta property="og:site_name" content="{{ .Site.Title }}" />
-	<meta property="og:url" content="{{ .Permalink }}" />
-	<meta property="og:locale" content="en">
+    {{ if $.Param "image" }} <meta property="og:image" content="{{ $.Param "image" | absURL }}" /> <meta
+    property="og:image:secure_url" content="{{ $.Param "image" | absURL }}" /> {{ else }}
+    <meta property="og:image" content="{{ $shareImg.Permalink }}" />
+    <meta property="og:image:secure_url" content="{{ $shareImg.Permalink }}" />
+    {{ end }}
+    <meta property="og:type" content="website" />
 
-	{{ if $.Param "image" }}
-	<meta property="og:image" content="{{ $.Param "image" | absURL  }}" />
-	<meta property="og:image:secure_url" content="{{ $.Param "image" | absURL }}" />
-	{{ else }}
-	<meta property="og:image" content="{{ $shareImg.Permalink }}" />
-	<meta property="og:image:secure_url" content="{{ $shareImg.Permalink }}" />
-	{{ end }}
-	<meta property="og:type" content="website" />
+    <!-- twitter -->
+    <meta name="twitter:site" content="@skyclerk" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {{ if $.Param "image" }} <meta name="twitter:image:src" content="{{ $.Param "image" | absURL }}" /> {{ else }}
+    <meta name="twitter:image:src" content="{{ $shareImg.Permalink }}" />
+    {{ end }}
+    <meta
+      name="twitter:description"
+      content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+    />
 
-	<!-- twitter -->
-	<meta name="twitter:site" content="@skyclerk" />
-	<meta name="twitter:card" content="summary_large_image" />
-	{{ if $.Param "image" }}
-	<meta name="twitter:image:src" content="{{ $.Param "image" | absURL  }}" />
-	{{ else }}
-	<meta name="twitter:image:src" content="{{ $shareImg.Permalink }}" />
-	{{ end }}
-	<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102266466-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102266466-2"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
+      gtag("config", "UA-102266466-2");
+    </script>
+  </head>
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
+  <body class="text-gray-900 leading-normal">
+    <div class="container mx-auto" id="app">{{- block "main" . }}{{- end }}</div>
 
-		gtag('config', 'UA-102266466-2');
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="{{ $js.Permalink }}"></script>
 
-	</script>
-</head>
-
-<body class="text-gray-900 leading-normal">
-
-	<div class="container mx-auto" id="app">
-		{{- block "main" . }}{{- end }}
-	</div>
-
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.0.0"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="{{ $js.Permalink }}"></script>
-
-	<script type="text/javascript">
-		var _paq = window._paq || [];
-		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-		_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-		_paq.push(["setCookieDomain", "*.skyclerk.com"]);
-		_paq.push(["setDomains", ["*.skyclerk.com", "*.app.skyclerk.com"]]);
-		_paq.push(['trackPageView']);
-		_paq.push(['enableLinkTracking']);
-		(function() {
-			var u = "//piwik.cloudmanic.com/";
-			_paq.push(['setTrackerUrl', u + 'matomo.php']);
-			_paq.push(['setSiteId', '9']);
-			var d = document,
-				g = d.createElement('script'),
-				s = d.getElementsByTagName('script')[0];
-			g.type = 'text/javascript';
-			g.async = true;
-			g.defer = true;
-			g.src = u + 'matomo.js';
-			s.parentNode.insertBefore(g, s);
-		})();
-
-	</script>
-</body>
-
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.skyclerk.com"]);
+      _paq.push(["setDomains", ["*.skyclerk.com", "*.app.skyclerk.com"]]);
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      (function () {
+        var u = "//piwik.cloudmanic.com/";
+        _paq.push(["setTrackerUrl", u + "matomo.php"]);
+        _paq.push(["setSiteId", "9"]);
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.type = "text/javascript";
+        g.async = true;
+        g.defer = true;
+        g.src = u + "matomo.js";
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
+  </body>
 </html>
