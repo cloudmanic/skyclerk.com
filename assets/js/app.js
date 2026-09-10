@@ -33,6 +33,11 @@ var app = new Vue({
 		showMobileMenu: false,
 
     // Contact Form fields.
+    contactSubmitting: false,
+    contactTurnstileToken: "",
+    contactTurnstileWidget: null,
+    contactSecurityError: "",
+    contactSubmitError: "",
     contactSuccess: "",
     contactEmail: "",
     contactPhone: "",
@@ -99,11 +104,86 @@ var app = new Vue({
 			this.showMobileMenu = !this.showMobileMenu;
     },
 
-    // Do contact form submit
+    // Load Cloudflare only on the support form, after Vue owns the widget container.
+    loadContactTurnstile: function() {
+      var that = this;
+      var container = this.$refs.contactTurnstile;
+      if (!container) {
+        return;
+      }
+
+      // Read only the public site key from the Hugo-rendered support template.
+      var siteKey = container.getAttribute("data-sitekey");
+      if (!siteKey) {
+        this.contactSecurityError = "The security check is unavailable. Please email help@skyclerk.com.";
+        return;
+      }
+
+      // Define the loader callback before requesting Cloudflare's asynchronous script.
+      window.skyclerkSupportTurnstileReady = function() {
+        // Render explicitly so Vue cannot replace an already initialized widget.
+        that.contactTurnstileWidget = window.turnstile.render(container, {
+          sitekey: siteKey,
+          action: "support_contact",
+          size: "flexible",
+          theme: "light",
+          "response-field": false,
+          // Hold the verified token until expiry or the next submission attempt.
+          callback: function(token) {
+            that.contactTurnstileToken = token;
+            that.contactSecurityError = "";
+          },
+          // Refresh an expired token while preserving the visitor's message.
+          "expired-callback": function() {
+            // Obtain a new challenge because tokens expire after five minutes.
+            that.resetContactTurnstile();
+          },
+          // Discard timed-out challenges and allow Cloudflare to refresh the widget.
+          "timeout-callback": function() {
+            that.contactTurnstileToken = "";
+            that.contactSecurityError = "The security check timed out. Please complete it again.";
+          },
+          // Keep submission blocked while Cloudflare automatically retries errors.
+          "error-callback": function() {
+            that.contactTurnstileToken = "";
+            that.contactSecurityError = "The security check could not load. Please refresh the page or email help@skyclerk.com.";
+          }
+        });
+      };
+
+      // Load the official script directly, without bundling or proxying it.
+      var script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=skyclerkSupportTurnstileReady&render=explicit";
+      script.async = true;
+      // Explain blocked scripts and network failures without allowing unverified requests.
+      script.onerror = function() {
+        that.contactSecurityError = "The security check could not load. Please refresh the page or email help@skyclerk.com.";
+      };
+      // Start the download only after the callback and container are ready.
+      document.head.appendChild(script);
+    },
+
+    // Clear consumed tokens and refresh this widget after every submission attempt.
+    resetContactTurnstile: function() {
+      this.contactTurnstileToken = "";
+      if (window.turnstile && this.contactTurnstileWidget !== null) {
+        // A token can only be verified once, even if sending the support email fails.
+        window.turnstile.reset(this.contactTurnstileWidget);
+      }
+    },
+
+    // Validate the support form and submit a single request with its challenge token.
     doContactSubmit: function() {
       var that = this;
 
+      // Ignore repeated clicks or Enter presses while the current request is pending.
+      if (this.contactSubmitting) {
+        return;
+      }
+
       // Clear error
+      this.contactSuccess = "";
+      this.contactSubmitError = "";
       this.contactEmailError = "";
       this.contactMessageError = "";
       this.contactFullNameError = "";
@@ -128,29 +208,57 @@ var app = new Vue({
         return;
       }
 
-      // Send request to the app server
-      axios.post('https://app.skyclerk.com/support/contact-us', {
+      // Guard programmatic submits as well as the disabled submit button.
+      if (!this.contactTurnstileToken) {
+        this.contactSecurityError = "Please complete the security check before submitting your request.";
+        return;
+      }
+
+      this.contactSubmitting = true;
+      this.contactSecurityError = "";
+
+      // Send the token to the server, which verifies it before contacting support.
+      return axios.post('https://app.skyclerk.com/support/contact-us', {
           fullName: this.contactFullName,
           email: this.contactEmail,
           phone: this.contactPhone,
-          message: this.contactMessage
-        })
+          message: this.contactMessage,
+          turnstile_token: this.contactTurnstileToken
+        }, { timeout: 30000 })
+        // Clear the message only when the backend confirms successful delivery.
         .then(function (response) {
           // Success
           if(response.status == 204) {
-            that.contactSuccess = "Thank you for submitting your contact request. We will get back to you very shorty.";
+            that.contactSuccess = "Thank you for submitting your contact request. We will get back to you shortly.";
             that.contactEmail = "";
             that.contactPhone = "";
             that.contactMessage = "";
             that.contactFullName = "";
           } else {
-            alert("Something went wrong. Maybe try to email help@skyclerk.com instead.");
+            that.contactSubmitError = "Something went wrong. Please try again or email help@skyclerk.com.";
           }
         })
+        // Preserve all fields on failure and distinguish rejected security checks.
         .catch(function (error) {
-          alert("Something went wrong. Maybe try to email help@skyclerk.com instead.");
+          if (error.response && error.response.data && error.response.data.code === "turnstile_failed") {
+            that.contactSecurityError = "Please complete the security check again and resubmit your request.";
+          } else {
+            that.contactSubmitError = "Your request could not be confirmed. Please try again or email help@skyclerk.com.";
+          }
+        })
+        // Unlock the form and replace the single-use token after success or failure.
+        .finally(function() {
+          that.contactSubmitting = false;
+          // Request a fresh token for retries or a second support message.
+          that.resetContactTurnstile();
         });
     }
+  },
+
+  // Initialize the support challenge only after its template has mounted.
+  mounted: function() {
+    // Other pages have no support container and do not load Cloudflare's script.
+    this.loadContactTurnstile();
   },
 
   // Called when this fires up.
