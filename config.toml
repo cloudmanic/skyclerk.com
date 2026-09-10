@@ -8,6 +8,8 @@ summaryLength = 20
 
 [params]
   description = "A bookkeeping tool for freelancers and solo entrepreneurs. The fastest, simplest, most delightful accounting application on the market."
+  # Public Cloudflare widget key. The secret stays in the app server's environment.
+  turnstileSiteKey = "0x4AAAAAAEulVSFH5SYrM-LP"
 
 [taxonomies]
   category = "categories"
